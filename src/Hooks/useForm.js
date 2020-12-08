@@ -7,7 +7,7 @@ export const useForm = (initState)=>{
 
     const onChange = (name, value)=>{
         
-        setForm({...form, [name]: [value]})
+        setForm({...form, [name]: value})
     }
 
     return [form, onChange]
