@@ -37,7 +37,7 @@ export default function EditAddressPage() {
       console.log(error.message)
     })
 
-    event.preventDefault()
+    
   }
 
 

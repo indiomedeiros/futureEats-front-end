@@ -1,6 +1,6 @@
-import {useEffect} from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom'
-import { useAuthorization } from '../Hooks/useAuthetication';
+import  useAuthorization  from '../Hooks/useAuthetication';
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 
@@ -9,36 +9,15 @@ import {api} from '../Services/api'
 export default function EditProfilePage() {
 
   const history = useHistory()
+  const user = JSON.parse(localStorage.getItem("user"))
+  const [initForm, setInitForm ]= useState()
+  const [form, onChange] = useForm({name: user.name, email: user.email, cpf: user.cpf})
   useAuthorization()
-  const initForm = {name: '', email: '', cpf: ''}
-  const [form, onChange] = useForm(initForm)
-
   const handleChange = (event)=>{
     const {name, value} = event.target
     
     onChange(name, value)
   }
-
-  useEffect(() => {
-    getProfile();
-  }, [getProfile]);
-
-
-  const getProfile = ()=>{
-
-    api.defaults.headers.common['auth'] = localStorage.getItem('token')
-    api.get('/profile').then(response=>{
-      initForm.name = response.user.name
-      initForm.email = response.user.email
-      initForm.cpf = response.user.cpf
-      
-    }).catch(error=>{
-      console.log(error.message)
-    })
-
-    event.preventDefault()
-  }
-
 
   const updateProfile = (event)=>{
       const body = {
@@ -47,6 +26,12 @@ export default function EditProfilePage() {
         cpf: form.cpf,
       }
       api.put('/profile', body).then(response=>{
+        const newUser = {...user,
+          name: form.name,
+          email: form.email,
+          cpf: form.cpf,  
+        }
+        localStorage.setItem("user", JSON.stringify(newUser))
         alert("Dados atualizados com sucesso!")
         history.push('/')
     
@@ -58,7 +43,10 @@ export default function EditProfilePage() {
   }
 
   return (
+    
     <form onSubmit={updateProfile}>
+      {console.log("form", initForm)}
+      {console.log("profile", localStorage.getItem("user"))}
       <input 
         type="name"
         name='name'
@@ -76,7 +64,6 @@ export default function EditProfilePage() {
         <input 
         type="text"
         name='cpf'
-        placeholder='111.111.111-10'
         value={form.cpf}
         pattern='[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}'
         onChange={handleChange} 
