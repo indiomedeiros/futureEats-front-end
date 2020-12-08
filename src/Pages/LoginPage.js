@@ -8,7 +8,7 @@ import {api} from '../Services/api'
 export default function LoginPage() {
 
   const history = useHistory()
-
+  console.log(history)
   const initForm = {email: '', password: '' }
   const [form, onChange] = useForm(initForm)
 
