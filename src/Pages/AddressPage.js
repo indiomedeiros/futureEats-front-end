@@ -53,7 +53,13 @@ export default function AddressPage() {
           value={form.number}
           onChange={handleChange} 
           required
-            />      
+          />      
+        <input 
+          type="text"
+          name='complement'
+          value={form.complement}
+          onChange={handleChange} 
+          />
         <input 
           type="text"
           name='neighbourhood'
@@ -61,26 +67,20 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           />
-          <input 
+        <input 
           type="text"
           name='city'
           value={form.city}
           onChange={handleChange} 
           required
             />
-            <input 
+        <input 
           type="text"
           name='state'
           value={form.state}
           onChange={handleChange} 
           required
             />
-          <input 
-          type="text"
-          name='complement'
-          value={form.complement}
-          onChange={handleChange} 
-          />
         <button>Salvar</button>
       </form>
     </div>
