@@ -33,7 +33,6 @@ export default function EditAddressPage() {
     }).catch(error=>{
       console.log(error.message)
     })
-  
   }
   
   useEffect(() => {
