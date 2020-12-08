@@ -2,6 +2,15 @@ import React from 'react';
 import {useHistory} from 'react-router-dom'
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
+import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
+import {FormContainer, 
+      
+        LogoInvert, 
+        MainContainer, 
+         
+        Button} from './Styles/styles'
+import InputComponent from '../Components/Inputs/InputComponent'
+
 
 
 
@@ -44,49 +53,58 @@ export default function SignUpPage() {
   }
 
   return (
-    <form onSubmit={signingUpUser}>
-      <input 
+    <MainContainer>
+      <LogoInvert src={Logo}/>
+
+    <FormContainer onSubmit={signingUpUser}>
+      
+      <InputComponent 
         type="Usuario"
         name='usuario'
         value={form.usuario}
         onChange={handleChange} 
+        label="Username"
         required
           />
-        <input 
-        type="email"
-        name='email'
-        value={form.email}
-        onChange={handleChange} 
-        required
+       <InputComponent
+          type="email"
+          name='email'
+          value={form.email}
+          onChange={handleChange} 
+          label="Email" 
           />
-        <input 
+        <InputComponent
         type="text"
         name='cpf'
         placeholder='111.111.111-10'
         value={form.cpf}
         pattern='[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}'
-        onChange={handleChange} 
+        onChange={handleChange}
+        label="cpf"
         required
           />
-      <input 
+      <InputComponent 
         type="password"
         name='password'
         value={form.password}
         onChange={handleChange} 
+        label="Password"
         required
         />
-        <input 
+        <InputComponent
         type="password"
         name='confirmPassword'
         value={form.confirmPassword}
         onChange={handleChange} 
+        label="Confirm"
         required
         />
-      <button>Sing Up</button>
+      <Button>Sing Up</Button>
 
       <div onClick={()=> history.push('/login')}>
         <p>Ja Tem Cadastro? <b> Log in</b> </p>
       </div>
-    </form>
+    </FormContainer>
+    </MainContainer>
   );
 }
