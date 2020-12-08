@@ -2,12 +2,16 @@ import React, { useContext, useState, useEffect } from "react";
 import GlobalStateContext from "../Global/GlobalStateContext";
 import { useHistory } from "react-router-dom";
 import useAuthorization from "../Hooks/useAuthetication";
+import {goToRestaurantPage} from '../Coordination/coordinator'
 
 export default function FeedPage() {
+  useAuthorization();
+
   const history = useHistory();
   const { restaurantList, addressMessage } = useContext(GlobalStateContext);
   const [filterList, setFilterList] = useState(restaurantList);
-  useAuthorization();
+
+  const Categorys = ['Todos',"Hamburguer", "Árabe", "Italiana", "Asiática","Mexicana","Carnes","Baiana","Sorvetes"]
   
   const getCategory = (category) => {
     const restaurants = restaurantList.filter((restaurant) => {
@@ -35,7 +39,6 @@ export default function FeedPage() {
   };
   return (
     <div>
-      {console.log(restaurantList)}
       <div>FutureEats</div>
       <div>
         <input
@@ -46,15 +49,12 @@ export default function FeedPage() {
       </div>
       <div>
         <ul>
-          <li onClick={() => getCategory("Pestiscos")}>Todos</li>
-          <li onClick={() => getCategory("Hamburguer")}>Hamburguer</li>
-          <li onClick={() => getCategory("Árabe")}>Árabe</li>
-          <li onClick={() => getCategory("Italiana")}>Italiana</li>
-          <li onClick={() => getCategory("Asiática")}>Asiática</li>
-          <li onClick={() => getCategory("Mexicana")}>Mexicana</li>
-          <li onClick={() => getCategory("Carnes")}>Carnes</li>
-          <li onClick={() => getCategory("Baiana")}>Baiana</li>
-          <li onClick={() => getCategory("Sorvetes")}>Sorvetes</li>
+          {
+            Categorys.map(category=>{
+            return <li onClick={() => getCategory(category)}>{category}</li>
+
+            })
+          }
         </ul>
       </div>
       {filterList &&
@@ -65,7 +65,7 @@ export default function FeedPage() {
                 {restaurant.name} <b>{restaurant.category}</b>
               </p>
               <button
-                onClick={() => history.push(`/restaurant/${restaurant.id}`)}
+                onClick={() => goToRestaurantPage(history, restaurant.id)}
               >
                 Go to Store
               </button>
