@@ -9,23 +9,25 @@ import AddressPage from '../Pages/AddressPage'
 import RestaurantPage from '../Pages/RestaurantPage'
 import EditProfilePage from '../Pages/EditProfilePage'
 import EditAddressPage from '../Pages/EditAddressPage';
+import { GlobalState } from '../Global/GlobalState';
 
 
 export default function Router() {
   return (
     <BrowserRouter>
-    
-    <Switch>
-        <Route exact path="/" component={InitialPage}/>
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/sign_up" component={SignUpPage} />
-        <Route exact path="/feed" component={FeedPage} />
-        <Route exact path="/profile" component={ProfilePage} />
-        <Route exact path="/update_profile" component={EditProfilePage} />
-        <Route exact path="/update_address" component={EditAddressPage} />
-        <Route exact path="/restaurant/:id" component={RestaurantPage} />
-        <Route exact path="/address_form" component={AddressPage} />
-    </Switch>
+    <GlobalState>
+        <Switch>
+            <Route exact path="/" component={InitialPage}/>
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/sign_up" component={SignUpPage} />
+            <Route exact path="/feed" component={FeedPage} />
+            <Route exact path="/profile" component={ProfilePage} />
+            <Route exact path="/update_profile" component={EditProfilePage} />
+            <Route exact path="/update_address" component={EditAddressPage} />
+            <Route exact path="/restaurant/:id" component={RestaurantPage} />
+            <Route exact path="/address_form" component={AddressPage} />
+        </Switch>
+    </GlobalState>
     </BrowserRouter>
   );
 }
