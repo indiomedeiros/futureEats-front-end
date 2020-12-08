@@ -1,7 +1,9 @@
 import React, {useContext, useState, useEffect} from 'react';
 import GlobalStateContext from '../Global/GlobalStateContext';
+import {useHistory} from 'react-router-dom'
 
 export default function FeedPage() {
+  const history = useHistory()
   const {restaurantList, addressMessage} = useContext(GlobalStateContext)
   const [filterList, setFilterList] = useState(restaurantList)
 
@@ -54,7 +56,7 @@ export default function FeedPage() {
        filterList && filterList.map(restaurant=>{
          return <div>
            <p>{restaurant.name} <b>{restaurant.category}</b></p>
-          
+            <button onClick={()=>history.push(`/restaurant/${restaurant.id}`)}>Go to Store</button>
          </div>
        })
      }
