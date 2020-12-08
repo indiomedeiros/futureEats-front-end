@@ -43,7 +43,7 @@ export default function InitialPage() {
     const token = localStorage.getItem('token')
     
     setTimeout(()=>{
-
+      //usar o coordinator
       token? history.push('/feed') : history.push('login')
       
     }, 2000)
