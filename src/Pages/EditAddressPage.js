@@ -17,13 +17,10 @@ export default function EditAddressPage() {
     onChange(name, value)
   }
 
-  useEffect(() => {
-    getAdress();
-  }, [getAdress]);
-
-
+  
+  
   const getAdress = ()=>{
-
+    
     api.defaults.headers.common['auth'] = localStorage.getItem('token')
     api.get('/profile/address').then(response=>{
       initForm.street = response.address.street
@@ -32,14 +29,15 @@ export default function EditAddressPage() {
       initForm.city = response.address.city
       initForm.state = response.address.state
       initForm.complement = response.address.complement
-
+      
     }).catch(error=>{
       console.log(error.message)
     })
-
-    
   }
-
+  
+  useEffect(() => {
+    getAdress();
+  }, [getAdress]);
 
   const addAdress = (event)=>{
 
