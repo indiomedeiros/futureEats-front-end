@@ -2,6 +2,13 @@ import React from 'react';
 import {useHistory} from 'react-router-dom'
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
+import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
+import {FormContainer, 
+        LogoInvert, 
+        MainContainer, 
+        Button} 
+        from './Styles/styles'
+import InputComponent from '../Components/Inputs/InputComponent'
 
 
 
@@ -35,54 +42,58 @@ export default function AddressPage() {
   }
   console.log(form)
   return (
-    <div>
-      <>
-        Meu Endereço
-      </>
-      <form onSubmit={addAdress}>
-        <input 
+    <MainContainer>
+      <LogoInvert src={Logo}/>
+      <FormContainer onSubmit={addAdress}>
+        <InputComponent
           type="text"
           name='street'
           value={form.street}
           onChange={handleChange} 
           required
+          label='Rua'
             />
-        <input 
+        <InputComponent
           type="text"
           name='number'
           value={form.number}
           onChange={handleChange} 
           required
+          label='Numero'
           />      
-        <input 
+        <InputComponent
           type="text"
           name='complement'
           value={form.complement}
           onChange={handleChange} 
+          label='Complemento'
           />
-        <input 
+        <InputComponent
           type="text"
           name='neighbourhood'
           value={form.neighbourhood}
           onChange={handleChange} 
           required
+          label='Bairro'
           />
-        <input 
+        <InputComponent
           type="text"
           name='city'
           value={form.city}
           onChange={handleChange} 
           required
+          label='Cidade'
             />
-        <input 
+        <InputComponent
           type="text"
           name='state'
           value={form.state}
           onChange={handleChange} 
           required
+          label='Estado'
             />
-        <button>Salvar</button>
-      </form>
-    </div>
+        <Button>Salvar</Button>
+      </FormContainer>
+    </MainContainer>
   );
 }
