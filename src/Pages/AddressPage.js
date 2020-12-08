@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
-import { useAuthorization } from '../Hooks/useAuthetication';
+import  useAuthorization  from '../Hooks/useAuthetication';
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
