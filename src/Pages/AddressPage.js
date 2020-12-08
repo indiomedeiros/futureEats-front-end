@@ -1,5 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
+import { useAuthorization } from '../Hooks/useAuthetication';
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
@@ -13,9 +14,8 @@ import InputComponent from '../Components/Inputs/InputComponent'
 
 
 export default function AddressPage() {
-
   const history = useHistory()
-
+  useAuthorization()
   const initForm = {street: '', number: '', neighbourhood: '', city: '', state: '', complement: ''}
   const [form, onChange] = useForm(initForm)
 
