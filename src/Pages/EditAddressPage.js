@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {useHistory} from 'react-router-dom'
+import { useAuthorization } from '../Hooks/useAuthetication';
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 
@@ -7,7 +8,7 @@ import {api} from '../Services/api'
 
 export default function EditAddressPage() {
   const history = useHistory()
-
+  useAuthorization()
   const initForm = {street: '', number: '', neighbourhood: '', city: '', state: '', complement: ''}
   const [form, onChange] = useForm(initForm)
 
