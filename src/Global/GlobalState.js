@@ -6,6 +6,8 @@ export const GlobalState = (props) => {
      const [restaurantList, setRestaurantList] = useState([])
      const [addressMessage, setAddressMessage] = useState('')
      const [filterList, setFilterList] = useState(restaurantList);
+     const [profile, setProfile ]= useState({})
+     const [orderHistory, setOrderHistory] = useState([])
      const Categorys = ['Todos',"Hamburguer",'Todos',"Hamburguer", 'Todos',"Hamburguer", "Árabe", "Italiana", "Asiática","Mexicana","Carnes","Baiana","Sorvetes"]
 
      useEffect(() => {
@@ -22,7 +24,11 @@ export const GlobalState = (props) => {
         setAddressMessage: setAddressMessage,
         Categorys: Categorys,
         setFilterList: setFilterList,
-        filterList: filterList
+        filterList: filterList,
+        profile: profile,
+        setProfile: setProfile,
+        orderHistory: orderHistory,
+        setOrderHistory: setOrderHistory
       }
       
       
