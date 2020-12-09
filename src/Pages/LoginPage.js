@@ -25,6 +25,18 @@ export default function LoginPage() {
     onChange(name, value)
   }
 
+  const getAddress = (token)=>{
+    
+    api.defaults.headers.common['auth'] = token
+    api.get('/profile/address').then(response=>{
+
+      localStorage.setItem('address', JSON.stringify(response.data.address))
+
+    }).catch(error=>{
+      console.log(error.message)
+    })
+  }
+
   const loggingUser = (event)=>{
 
     api.post('/login', form).then(response=>{
@@ -32,7 +44,7 @@ export default function LoginPage() {
       localStorage.setItem('token', response.data.token)
 
       if(response.data.user.hasAddress){
-
+        getAddress(response.data.token)
         history.push('/')
       }else{
         history.push('/address_form')
