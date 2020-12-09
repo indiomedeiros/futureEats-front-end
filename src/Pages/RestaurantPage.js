@@ -12,15 +12,12 @@ export default function RestaurantPage() {
 
   const params = useParams()
   const [restaurantData] = useRequestData(`/restaurants/${params.id}`)
-  const categorys = ['Refeicao', 'Acompanhamento', 'Pizza', 'Salgado', 'Bebida', 'Sorvete']
+  const categorys = ['Refeição','Refeição','Refeição', 'Acompanhamento', 'Pizza', 'Salgado', 'Bebida', 'Sorvete']
   
   const getCategory = (category) => {
     //placebo Function
   };
-
-   
-   
-
+  
   return (<MainContainer>
    
       <LogoRestaurant>
