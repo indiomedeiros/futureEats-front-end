@@ -45,8 +45,7 @@ export default function EditProfilePage() {
   return (
     
     <form onSubmit={updateProfile}>
-      {console.log("form", initForm)}
-      {console.log("profile", localStorage.getItem("user"))}
+    
       <input 
         type="name"
         name='name'
