@@ -71,7 +71,7 @@ export default function FeedPage() {
 
       <RenderContainer>
  
-      {filterList && filterList.map((restaurant) => {
+      {filterList.length > 0 ? filterList.map((restaurant) => {
           return (
             <div>
               <p>
@@ -84,12 +84,10 @@ export default function FeedPage() {
               </button>
             </div>
           );
-        })}
-      {addressMessage && (
-        <div>
-          <h4>{addressMessage}</h4>
-        </div>
-      )}
+        }):<div>
+          <h5>nao encontramos :( </h5>
+          </div>
+    }
       </RenderContainer>
     </MainContainer>
   );

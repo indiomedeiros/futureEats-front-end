@@ -13,6 +13,7 @@ export default function RestaurantPage() {
   // const {buyFood, setBuyFood} = useContext(GlobalStateContext)
   const params = useParams()
   const [restaurantData] = useRequestData(`/restaurants/${params.id}`)
+
   const categorys = ['Refeicao', 'Acompanhamento', 'Pizza', 'Salgado', 'Bebida', 'Sorvete']
   const history = useHistory()
   const getCategory = (category) => {
@@ -40,6 +41,7 @@ export default function RestaurantPage() {
     console.log("food", newFood)
   }  
    
+
 
   return (<MainContainer>
    
