@@ -99,7 +99,7 @@ export default function SignUpPage() {
         label="Confirm"
         required
         />
-      <Button>Sing Up</Button>
+      <Button>Sign Up</Button>
 
       <div onClick={()=> history.push('/login')}>
         <p>Ja Tem Cadastro? <b> Log in</b> </p>

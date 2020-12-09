@@ -1,18 +1,26 @@
 import React, { useContext, useState, useEffect } from "react";
 import GlobalStateContext from "../Global/GlobalStateContext";
 import { useHistory } from "react-router-dom";
+import {api} from '../Services/api'
 import useAuthorization from "../Hooks/useAuthetication";
 import {goToRestaurantPage} from '../Coordination/coordinator'
+import SearchIcon from '@material-ui/icons/Search';
+import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
+import {MainContainer, SearchInput, SearchContainer, CategoryContainer, CategoryItem, RenderContainer}from './Styles/styles'
+import useRequestData from "../Hooks/useRequestData";
 
 export default function FeedPage() {
   useAuthorization();
 
   const history = useHistory();
-  const { restaurantList, addressMessage } = useContext(GlobalStateContext);
-  const [filterList, setFilterList] = useState(restaurantList);
+  const { restaurantList, 
+          addressMessage, 
+          Categorys, 
+          filterList, 
+          setFilterList,
+          setRestaurantList,
+          setAddressMessage } = useContext(GlobalStateContext);
 
-  const Categorys = ['Todos',"Hamburguer", "Árabe", "Italiana", "Asiática","Mexicana","Carnes","Baiana","Sorvetes"]
-  
   const getCategory = (category) => {
     const restaurants = restaurantList.filter((restaurant) => {
       return restaurant.category === category;
@@ -20,15 +28,20 @@ export default function FeedPage() {
     setFilterList(restaurants);
   };
 
-  useEffect(() => {
-    if (filterList.length === 0) {
-      setFilterList(restaurantList);
+  const [data] = useRequestData('/restaurants')
+
+  useEffect(()=>{
+    if(data){
+      setRestaurantList(data.restaurants)
+
     }
-  }, [filterList, restaurantList]);
+
+  }, [data])
+ 
 
   const filterName = (event) => {
     const restaurants = restaurantList.filter((restaurant) => {
-      if (event.target.value === "") {
+      if (event.target.value === "Todos") {
         return restaurant.name === restaurant.name;
       } else {
         let nameLowerCase = restaurant.name.toLowerCase();
@@ -38,27 +51,29 @@ export default function FeedPage() {
     setFilterList(restaurants);
   };
   return (
-    <div>
-      <div>FutureEats</div>
-      <div>
-        <input
+    
+    <MainContainer>
+      <SearchContainer>
+        <SearchIcon fontSize='inherit'/>
+        <SearchInput
           type="text"
           onChange={filterName}
           placeholder="search restaurants"
         />
-      </div>
-      <div>
-        <ul>
+      </SearchContainer>
+      <CategoryContainer>
+        
           {
             Categorys.map(category=>{
-            return <li onClick={() => getCategory(category)}>{category}</li>
+            return <CategoryItem onClick={() => getCategory(category)}>{category}</CategoryItem>
 
             })
           }
-        </ul>
-      </div>
-      {filterList &&
-        filterList.map((restaurant) => {
+       
+      </CategoryContainer>
+      <RenderContainer>
+
+      {filterList && filterList.map((restaurant) => {
           return (
             <div>
               <p>
@@ -77,6 +92,7 @@ export default function FeedPage() {
           <h4>{addressMessage}</h4>
         </div>
       )}
-    </div>
+      </RenderContainer>
+    </MainContainer>
   );
 }

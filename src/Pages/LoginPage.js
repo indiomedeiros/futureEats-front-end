@@ -16,7 +16,6 @@ import InputComponent from '../Components/Inputs/InputComponent'
 export default function LoginPage() {
 
   const history = useHistory()
-  console.log(history)
   const initForm = {email: '', password: '' }
   const [form, onChange] = useForm(initForm)
 
