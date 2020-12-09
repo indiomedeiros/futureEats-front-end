@@ -7,18 +7,12 @@ import useRequestData from '../Hooks/useRequestData';
 export default function RestaurantPage() {
   useAuthorization()
 
-
-  const {restaurantList} = useContext(GlobalStateContext)
   const params = useParams()
   //requisição direta no state
   const [restaurantData] = useRequestData(`/restaurants/${params.id}`)
 
-
-   
-   
-
   return (<div>
-   
+
       <div>
           
           <img src={restaurantData && restaurantData.restaurant.logoUrl} alt=""/>
@@ -30,7 +24,7 @@ export default function RestaurantPage() {
             <h1>Categoria: {food.category}</h1>
             <p>Nome : {food.name}</p>
             <p>Descrição: {food.description}</p>
-            <img  src={food.photoUrl}/>
+            <img src={food.photoUrl}/>
             <p>R$ {food.price.toFixed(2)}</p>
             </div>
           )
