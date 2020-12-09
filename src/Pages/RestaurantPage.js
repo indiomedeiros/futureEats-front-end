@@ -13,9 +13,7 @@ export default function RestaurantPage() {
   //requisição direta no state
   const [restaurantData] = useRequestData(`/restaurants/${params.id}`)
 
-  const restaurant = restaurantList.filter(rest=>{
-    return rest.id === params.id
-  })
+
    
    
 
@@ -23,15 +21,16 @@ export default function RestaurantPage() {
    
       <div>
           
-          <img src={restaurant[0] && restaurant[0].logoUrl} alt=""/>
+          <img src={restaurantData && restaurantData.restaurant.logoUrl} alt=""/>
       </div>
-
+        {restaurantData && console.log(restaurantData)}
       {restaurantData &&  restaurantData.restaurant.products.map((food)=> {
+
           return (<div key={food.id}>
             <h1>Categoria: {food.category}</h1>
             <p>Nome : {food.name}</p>
             <p>Descrição: {food.description}</p>
-            <img  width="200px" src={food.photoUrl}/>
+            <img  src={food.photoUrl}/>
             <p>R$ {food.price.toFixed(2)}</p>
             </div>
           )
