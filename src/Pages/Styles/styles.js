@@ -37,16 +37,7 @@ export const SearchContainer = styled.div`
     padding-left: 20px;
     
 `
-export const CategoryContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top:262px;
-    left: 10px;
-    overflow: scroll;
-    width: 95%;
-`
+
 export const RenderContainer = styled.div`
 
     display: flex;
@@ -54,10 +45,10 @@ export const RenderContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     overflow: scroll ;
-    width: 100%;
+    width: 100vw;
     height: 70vh;
     position: absolute;
-    top:372px;
+    top:400px;
 
 `
 export const LogoInvert = styled.img`
@@ -91,15 +82,16 @@ export const SearchInput = styled.input`
     font-size: 35px;
 
 `
-export const CategoryItem = styled.li`
+export const LogoRestaurant = styled.div`
 
-    list-style: none;
-    margin: 50px 50px;
-    font-size: 30px;
-    letter-spacing: 0.36;
-    &:hover{
-        color: #5cb646;
-    }
-
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
 
 `
