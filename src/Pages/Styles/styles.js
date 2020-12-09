@@ -48,7 +48,7 @@ export const RenderContainer = styled.div`
     width: 100vw;
     height: 70vh;
     position: absolute;
-    top:372px;
+    top:400px;
 
 `
 export const LogoInvert = styled.img`
