@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import  useAuthorization  from '../Hooks/useAuthetication';
 import {useForm}  from '../Hooks/useForm'
@@ -15,8 +15,9 @@ import InputComponent from '../Components/Inputs/InputComponent'
 
 export default function AddressPage() {
   const history = useHistory()
+  const [formDefault, setFormDefault] = useState(JSON.parse(localStorage.getItem('address')))
   useAuthorization()
-  const initForm = {street: '', number: '', neighbourhood: '', city: '', state: '', complement: ''}
+  const initForm = formDefault ? formDefault : {street: '', number: '', neighbourhood: '', city: '', state: '', complement: ''}
   const [form, onChange] = useForm(initForm)
 
   const handleChange = (event)=>{
@@ -25,9 +26,9 @@ export default function AddressPage() {
     onChange(name, value)
   }
 
-  const addAdress = (event)=>{
 
-    
+  const addAdress = (event)=>{
+    localStorage.setItem('address', JSON.stringify(form))
     api.defaults.headers.common['auth'] = localStorage.getItem('token')
     api.put('/address', form).then(response=>{
       localStorage.setItem('user', JSON.stringify(response.data.user))
@@ -40,7 +41,7 @@ export default function AddressPage() {
 
     event.preventDefault()
   }
-  console.log(form)
+  
   return (
     <MainContainer>
       <LogoInvert src={Logo}/>
