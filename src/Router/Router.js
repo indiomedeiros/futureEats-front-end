@@ -9,6 +9,7 @@ import AddressPage from '../Pages/AddressPage'
 import RestaurantPage from '../Pages/RestaurantPage'
 import EditProfilePage from '../Pages/EditProfilePage'
 import { GlobalState } from '../Global/GlobalState';
+import CartPage from '../Pages/CartPage';
 
 
 export default function Router() {
@@ -24,6 +25,7 @@ export default function Router() {
             <Route exact path="/update_profile" component={EditProfilePage} />
             <Route exact path="/restaurant/:id" component={RestaurantPage} />
             <Route exact path="/address_form" component={AddressPage} />
+            <Route exact path="/cart" component={CartPage} />
         </Switch>
     </GlobalState>
     </BrowserRouter>
