@@ -34,6 +34,8 @@ export const goToAddressPage = (history) => {
     history.push("/address_form");
 };
 
-
+export const goToCartPage = (history) => {
+    history.push("/cart");
+};
   
  
