@@ -1,13 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import GlobalStateContext from "../Global/GlobalStateContext";
 import { useHistory } from "react-router-dom";
-import {api} from '../Services/api'
 import useAuthorization from "../Hooks/useAuthetication";
 import {goToRestaurantPage} from '../Coordination/coordinator'
 import SearchIcon from '@material-ui/icons/Search';
-import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
-import {MainContainer, SearchInput, SearchContainer, CategoryContainer, CategoryItem, RenderContainer}from './Styles/styles'
+import {MainContainer, SearchInput, SearchContainer,RenderContainer}from './Styles/styles'
 import useRequestData from "../Hooks/useRequestData";
+import CategoryComponent from "../Components/CategoryComponent/CategoryComponent";
 
 export default function FeedPage() {
   useAuthorization();
@@ -19,11 +18,16 @@ export default function FeedPage() {
           filterList, 
           setFilterList,
           setRestaurantList,
-          setAddressMessage } = useContext(GlobalStateContext);
+         } = useContext(GlobalStateContext);
 
   const getCategory = (category) => {
     const restaurants = restaurantList.filter((restaurant) => {
-      return restaurant.category === category;
+      if(category === 'Todos'){
+        return restaurant.category === restaurant.category;
+      }else{
+
+        return restaurant.category === category;
+      }
     });
     setFilterList(restaurants);
   };
@@ -41,7 +45,7 @@ export default function FeedPage() {
 
   const filterName = (event) => {
     const restaurants = restaurantList.filter((restaurant) => {
-      if (event.target.value === "Todos") {
+      if (event.target.value === "") {
         return restaurant.name === restaurant.name;
       } else {
         let nameLowerCase = restaurant.name.toLowerCase();
@@ -61,18 +65,12 @@ export default function FeedPage() {
           placeholder="search restaurants"
         />
       </SearchContainer>
-      <CategoryContainer>
-        
-          {
-            Categorys.map(category=>{
-            return <CategoryItem onClick={() => getCategory(category)}>{category}</CategoryItem>
+     <CategoryComponent
+      arrayCategory={Categorys}
+      getCategory={getCategory} />
 
-            })
-          }
-       
-      </CategoryContainer>
       <RenderContainer>
-
+ 
       {filterList && filterList.map((restaurant) => {
           return (
             <div>
