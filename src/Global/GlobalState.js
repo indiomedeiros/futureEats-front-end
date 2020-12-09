@@ -2,7 +2,7 @@ import GlobalStateContext from "./GlobalStateContext";
 import React, { useState, useEffect} from "react";
 
 export const GlobalState = (props) => {
-
+     
      const [restaurantList, setRestaurantList] = useState([])
      const [addressMessage, setAddressMessage] = useState('')
      const [filterList, setFilterList] = useState(restaurantList);
