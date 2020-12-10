@@ -1,5 +1,6 @@
 import GlobalStateContext from "./GlobalStateContext";
 import React, { useState, useEffect} from "react";
+import { api } from "../Services/api";
 
 export const GlobalState = (props) => {
      
@@ -8,13 +9,28 @@ export const GlobalState = (props) => {
      const [filterList, setFilterList] = useState(restaurantList);
      const [profile, setProfile ]= useState({})
      const [orderHistory, setOrderHistory] = useState([])
+     const [display, setDisplay] = useState(undefined)
      const Categorys = ['Todos',"Hamburguer",'Todos',"Hamburguer", 'Todos',"Hamburguer", "Árabe", "Italiana", "Asiática","Mexicana","Carnes","Baiana","Sorvetes"]
 
      useEffect(() => {
       
           setFilterList(restaurantList)
+          getActiveOrder()
        
      }, [restaurantList])
+
+      const getActiveOrder = () => {
+        api.defaults.headers.common["auth"] = localStorage.getItem("token")
+        api("/active-order")
+        .then(response => {
+          console.log("display", response)
+            setDisplay(response.data.order)
+            
+        })
+        .catch(error => {
+          console.log("ActiveOrder", error)
+        })
+      }
 
       
       const providerValue = {
@@ -28,7 +44,9 @@ export const GlobalState = (props) => {
         profile: profile,
         setProfile: setProfile,
         orderHistory: orderHistory,
-        setOrderHistory: setOrderHistory
+        setOrderHistory: setOrderHistory,
+        display: display,
+        setDisplay: setDisplay
       }
       
       
