@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Background = styled.div`
 
-  height: 130vh;
+  height: 100vh;
   width: 100vw;
   position: relative;
   background-color: black;
