@@ -7,8 +7,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Background = styled.div`
 
-  height: 100vh;
-  width: 100vw;
+  height: 200vh;
+  width: 120vw;
   position: relative;
   background-color: black;
   z-index: 2;
@@ -17,8 +17,8 @@ const Background = styled.div`
 
 const LogoCenter = styled.img`
 
-  width: 240px;
-  height: 160px;
+  width: 126px;
+  height: 65px;
   margin-bottom: 20px;
  
 
@@ -54,7 +54,7 @@ export default function InitialPage() {
     <Background>
         <LogoContainer>
           <LogoCenter src={Logo} alt='future eats logo'/>
-          <CircularProgress color='inherit' size='80px' />
+          <CircularProgress color='inherit' size='40px' />
         </LogoContainer>
     </Background>
   );

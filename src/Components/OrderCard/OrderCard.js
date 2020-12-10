@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { Orders, Restaurant, OrderDate, Subtotal  } from './styles';
 
 
 export default function OrderCard(props) {
@@ -10,11 +10,13 @@ const date = new Date(props.date);
   const formatDate = newDate.split("de ")
 
   return (
+
     <>
     <p>{props.restaurantName}</p>
     <p>{formatDate}</p>
     <h4>SUBTOTAL R${props.totalPrice.toFixed(2)}</h4>
     
     </>
+
   );
 }

@@ -4,11 +4,9 @@ import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
 import {FormContainer, 
-      
-        LogoInvert, 
-        MainContainer, 
-         
-        Button} from './Styles/styles'
+        LogoInvert,
+        Button,
+        Login_Sign_Container} from './Styles/styles'
 import InputComponent from '../Components/Inputs/InputComponent'
 
 
@@ -39,7 +37,7 @@ export default function SignUpPage() {
         cpf: form.cpf,
         password: form.password
       }
-      api.post('/login', body).then(response=>{
+      api.post('/signup', body).then(response=>{
         localStorage.setItem('user', JSON.stringify(response.data.user))
         localStorage.setItem('token', response.data.token)
   
@@ -53,9 +51,9 @@ export default function SignUpPage() {
   }
 
   return (
-    <MainContainer>
+    <Login_Sign_Container>
       <LogoInvert src={Logo}/>
-
+      <h4>Resgistre-se</h4>
     <FormContainer onSubmit={signingUpUser}>
       
       <InputComponent 
@@ -105,6 +103,6 @@ export default function SignUpPage() {
         <p>Ja Tem Cadastro? <b> Log in</b> </p>
       </div>
     </FormContainer>
-    </MainContainer>
+    </Login_Sign_Container>
   );
 }
