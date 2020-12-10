@@ -70,7 +70,8 @@ export default function AddressPage() {
           value={form.street}
           onChange={handleChange} 
           required
-          label='Rua'
+          label='Logradouro'
+          placeholder="Rua / Av"
             />
         <InputComponent
           type="text"
@@ -78,7 +79,8 @@ export default function AddressPage() {
           value={form.number}
           onChange={handleChange} 
           required
-          label='Numero'
+          label='Numero'          
+          placeholder="Número"
           />      
         <InputComponent
           type="text"
@@ -86,6 +88,7 @@ export default function AddressPage() {
           value={form.complement}
           onChange={handleChange} 
           label='Complemento'
+          placeholder="Apto / Bloco"
           />
         <InputComponent
           type="text"
@@ -94,6 +97,7 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           label='Bairro'
+          placeholder="Bairro"
           />
         <InputComponent
           type="text"
@@ -102,6 +106,7 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           label='Cidade'
+          placeholder="Cidade"
             />
         <InputComponent
           type="text"
@@ -110,6 +115,7 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           label='Estado'
+          placeholder="Estado"
             />
         <Button>Salvar</Button>
       </FormContainer>
