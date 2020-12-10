@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Orders = styled.div`
   width: 328px;
-  height: 102px;
+  //height: 102px;
   margin: 7px 0 0;
   padding: 16px;
   border-radius: 8px;
