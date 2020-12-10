@@ -11,6 +11,87 @@ export const MainContainer = styled.div`
     position: relative;
    
 ` 
+
+export const TitleBar = styled.h4`
+  width: 360px;
+  height: 24px;
+  margin-top: 90px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5px 0 0 black;
+  background-color: #ffffff;
+`
+
+export const EditProfile = styled.img`
+  width: 24px;
+  height: 24px;
+  margin: 16px 16px 2px 320px;
+  object-fit: contain;
+  position: absolute;
+`
+
+export const EditAddress = styled.img`
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 10px 320px;
+  object-fit: contain;
+  position: absolute;
+`
+
+export const OrderBar = styled.h4`
+  width: 360px;
+  height: 20px;
+  margin-top: 10px;
+  //margin-bottom: 10px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5px 0 0 black;
+  background-color: #ffffff;
+`
+
+export const UserData = styled.p`
+  width: 328px;
+  height: 18px;
+  margin: 16px 16px 8px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #000000;
+`
+export const AddresTitle = styled.p`
+  width: 328px;
+  height: 18px;
+  margin: 16px 16px 8px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #b8b8b8;
+`
+export const UserContainer = styled.div`
+  width: 360px;
+  height: 106px;
+  margin: 0px 0;
+  padding: 5px;
+`
+
+export const AddressContainer = styled.div`
+  width: 360px;
+  height: 76px;
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #eeeeee;
+`
+
 export const Login_Sign_Container = styled(MainContainer)`
 
     position: absolute;
