@@ -37,7 +37,7 @@ export default function SignUpPage() {
         cpf: form.cpf,
         password: form.password
       }
-      api.post('/login', body).then(response=>{
+      api.post('/signup', body).then(response=>{
         localStorage.setItem('user', JSON.stringify(response.data.user))
         localStorage.setItem('token', response.data.token)
   
