@@ -4,7 +4,8 @@ import {useHistory} from 'react-router-dom'
 import  useAuthorization  from '../Hooks/useAuthetication';
 import OrderCard from '../Components/OrderCard/OrderCard'
 import useRequestData from "../Hooks/useRequestData";
-import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar } from './Styles/styles';
+import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar, UserContainer, EditAddress, EditProfile } from './Styles/styles';
+import edit from '../Assets/Img/edit.png'
 
 
 export default function ProfilePage() {
@@ -34,25 +35,29 @@ export default function ProfilePage() {
 
   return (
     <MainContainer>
-    <TitleBar>Meu Perfil</TitleBar>
-    <UserData>{profile.name}</UserData>
-    <UserData>{profile.email}</UserData>
-    <UserData>{profile.cpf}</UserData>
-    <AddressContainer>
-      <AddresTitle>Endereço Cadastrado</AddresTitle>
-      <UserData>{profile.address}</UserData>
-    </AddressContainer>
-    <OrderBar>Históricos de Pedidos</OrderBar>
-    {orderHistory ? orderHistory.map(order => {
-                return <OrderCard 
-                    key={order.createdAt}
-                    totalPrice={order.totalPrice}
-                    restaurantName={order.restaurantName}
-                    date={order.expiresAt}
-                />
-            }) : 
-            <p>Você não realizou nenhum pedido</p>}
-    
+      <TitleBar>Meu Perfil</TitleBar>
+      <UserContainer>
+        <UserData>{profile.name}</UserData>
+        <EditProfile src={edit} onClick={()=> history.push('/update_profile')}></EditProfile>
+        <UserData>{profile.email}</UserData>
+        <UserData>{profile.cpf}</UserData>
+      </UserContainer>
+      <AddressContainer>
+        <AddresTitle>Endereço Cadastrado</AddresTitle>
+        <EditAddress src={edit} onClick={()=> history.push('/address_form')}></EditAddress>
+        <UserData>{profile.address}</UserData>
+      </AddressContainer>
+      <OrderBar>Históricos de Pedidos</OrderBar>
+      {orderHistory ? orderHistory.map(order => {
+                  return <OrderCard 
+                      key={order.createdAt}
+                      totalPrice={order.totalPrice}
+                      restaurantName={order.restaurantName}
+                      date={order.expiresAt}
+                  />
+              }) : 
+              <p>Você não realizou nenhum pedido</p>}
+      
     </MainContainer>
   );
 }
