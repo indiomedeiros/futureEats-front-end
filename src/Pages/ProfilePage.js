@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom'
 import  useAuthorization  from '../Hooks/useAuthetication';
 import OrderCard from '../Components/OrderCard/OrderCard'
 import useRequestData from "../Hooks/useRequestData";
+import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar } from './Styles/styles';
 
 
 export default function ProfilePage() {
@@ -32,14 +33,16 @@ export default function ProfilePage() {
 
 
   return (
-    <div>
-    <p>Meu Perfil</p>
-    <p>{profile.name}</p>
-    <p>{profile.email}</p>
-    <p>{profile.cpf}</p>
-    <p>Endereço Cadastrado</p>
-    <p>{profile.address}</p>
-    <p>Históricos de Pedidos</p>
+    <MainContainer>
+    <TitleBar>Meu Perfil</TitleBar>
+    <UserData>{profile.name}</UserData>
+    <UserData>{profile.email}</UserData>
+    <UserData>{profile.cpf}</UserData>
+    <AddressContainer>
+      <AddresTitle>Endereço Cadastrado</AddresTitle>
+      <UserData>{profile.address}</UserData>
+    </AddressContainer>
+    <OrderBar>Históricos de Pedidos</OrderBar>
     {orderHistory ? orderHistory.map(order => {
                 return <OrderCard 
                     key={order.createdAt}
@@ -50,6 +53,6 @@ export default function ProfilePage() {
             }) : 
             <p>Você não realizou nenhum pedido</p>}
     
-    </div>
+    </MainContainer>
   );
 }

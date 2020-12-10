@@ -10,6 +10,63 @@ export const MainContainer = styled.div`
     width: 100vw;
     position: relative;
 ` 
+
+export const TitleBar = styled.h4`
+  width: 360px;
+  height: 64px;
+  margin-top: 90px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5px 0 0 black;
+  background-color: #ffffff;
+`
+
+export const OrderBar = styled.h4`
+  width: 360px;
+  height: 64px;
+  margin-top: 20px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5px 0 0 black;
+  background-color: #ffffff;
+`
+
+export const UserData = styled.p`
+  width: 328px;
+  height: 18px;
+  margin: 16px 16px 8px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #000000;
+`
+export const AddresTitle = styled.p`
+  width: 328px;
+  height: 18px;
+  margin: 16px 16px 8px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #b8b8b8;
+`
+export const AddressContainer = styled.div`
+  width: 360px;
+  height: 76px;
+  margin: 16px 0;
+  padding: 16px;
+  background-color: #eeeeee;
+`
+
 export const Login_Sign_Container = styled(MainContainer)`
 
     position: absolute;
