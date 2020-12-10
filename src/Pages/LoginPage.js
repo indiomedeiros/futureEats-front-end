@@ -5,8 +5,8 @@ import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
 import {FormContainer, 
         LogoInvert, 
-        MainContainer, 
-        Button} 
+        Button,
+        Login_Sign_Container} 
         from './Styles/styles'
 import InputComponent from '../Components/Inputs/InputComponent'
 
@@ -59,7 +59,7 @@ export default function LoginPage() {
   }
 
   return (
-    <MainContainer>
+    <Login_Sign_Container>
         <LogoInvert src={Logo}/>
 
         <h3>Entrar</h3>
@@ -86,6 +86,6 @@ export default function LoginPage() {
             </div>
           
     </FormContainer>
-    </MainContainer>
+    </Login_Sign_Container>
   );
 }

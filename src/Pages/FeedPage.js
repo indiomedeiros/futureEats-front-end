@@ -12,8 +12,7 @@ export default function FeedPage() {
   useAuthorization();
 
   const history = useHistory();
-  const { restaurantList, 
-          addressMessage, 
+  const { restaurantList,  
           Categorys, 
           filterList, 
           setFilterList,
@@ -73,7 +72,7 @@ export default function FeedPage() {
  
       {filterList.length > 0 ? filterList.map((restaurant) => {
           return (
-            <div>
+            <div key={restaurant.id}>
               <p>
                 {restaurant.name} <b>{restaurant.category}</b>
               </p>

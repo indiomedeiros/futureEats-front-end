@@ -9,6 +9,15 @@ export const MainContainer = styled.div`
     height: 100vh;
     width: 100vw;
     position: relative;
+` 
+export const Login_Sign_Container = styled(MainContainer)`
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+    background-color: white;
+    
 `
 
 export const FormContainer = styled.form`

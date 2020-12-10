@@ -4,11 +4,9 @@ import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
 import {FormContainer, 
-      
-        LogoInvert, 
-        MainContainer, 
-         
-        Button} from './Styles/styles'
+        LogoInvert,
+        Button,
+        Login_Sign_Container} from './Styles/styles'
 import InputComponent from '../Components/Inputs/InputComponent'
 
 
@@ -53,7 +51,7 @@ export default function SignUpPage() {
   }
 
   return (
-    <MainContainer>
+    <Login_Sign_Container>
       <LogoInvert src={Logo}/>
 
     <FormContainer onSubmit={signingUpUser}>
@@ -105,6 +103,6 @@ export default function SignUpPage() {
         <p>Ja Tem Cadastro? <b> Log in</b> </p>
       </div>
     </FormContainer>
-    </MainContainer>
+    </Login_Sign_Container>
   );
 }
