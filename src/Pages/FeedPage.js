@@ -7,13 +7,13 @@ import SearchIcon from '@material-ui/icons/Search';
 import {MainContainer, SearchInput, SearchContainer,RenderContainer}from './Styles/styles'
 import useRequestData from "../Hooks/useRequestData";
 import CategoryComponent from "../Components/CategoryComponent/CategoryComponent";
+import CardRestaurant from "../Components/CardRestaurant/CardRestaurant";
 
 export default function FeedPage() {
   useAuthorization();
 
   const history = useHistory();
-  const { restaurantList, 
-          addressMessage, 
+  const { restaurantList,  
           Categorys, 
           filterList, 
           setFilterList,
@@ -57,6 +57,7 @@ export default function FeedPage() {
   return (
     
     <MainContainer>
+      {console.log(filterList)}
       <SearchContainer>
         <SearchIcon fontSize='inherit'/>
         <SearchInput
@@ -73,19 +74,17 @@ export default function FeedPage() {
  
       {filterList.length > 0 ? filterList.map((restaurant) => {
           return (
-            <div>
-              <p>
-                {restaurant.name} <b>{restaurant.category}</b>
-              </p>
-              <button
-                onClick={() => goToRestaurantPage(history, restaurant.id)}
-              >
-                Go to Store
-              </button>
-            </div>
+            <CardRestaurant key={restaurant.id}
+              onClick={() => goToRestaurantPage(history, restaurant.id)}
+              restaurant={restaurant.name}
+              image={restaurant.logoUrl}
+              deliveryTime={restaurant.deliveryTime-10 + ' - ' + restaurant.deliveryTime + ' Min'}
+              deliveryPrice={'Frete'+ 'R$' + restaurant.shipping.toFixed(2)  }
+            />
+            
           );
         }):<div>
-          <h5>nao encontramos :( </h5>
+          <h2>nao encontramos :( </h2>
           </div>
     }
       </RenderContainer>

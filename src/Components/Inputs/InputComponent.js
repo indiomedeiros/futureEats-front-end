@@ -9,7 +9,7 @@ export const MyTextField = styled(TextField)`
 
 export const InputContainer = styled.div`
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     height: 56px;
     width: 80%;
 

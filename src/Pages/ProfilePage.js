@@ -32,7 +32,7 @@ export default function ProfilePage() {
 
 
   return (
-    <>
+    <div>
     <p>Meu Perfil</p>
     <p>{profile.name}</p>
     <p>{profile.email}</p>
@@ -50,6 +50,6 @@ export default function ProfilePage() {
             }) : 
             <p>Você não realizou nenhum pedido</p>}
     
-    </>
+    </div>
   );
 }

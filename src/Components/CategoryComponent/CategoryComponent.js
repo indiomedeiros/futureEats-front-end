@@ -6,7 +6,7 @@ const CategoryContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top:312px;
+    top:110px;
     left: 10px;
     overflow: scroll;
     width: 95%;
@@ -14,8 +14,8 @@ const CategoryContainer = styled.div`
 export const CategoryItem = styled.a`
 
     list-style: none;
-    margin: 50px 50px;
-    font-size: 30px;
+    margin: 20px 10px;
+    font-size: 16px;
     letter-spacing: 0.36;
     color: black;
     text-decoration: none;
@@ -29,8 +29,8 @@ export default function CategoryComponent(props) {
     <CategoryContainer>
         
     {
-      props.arrayCategory.map(category=>{
-      return <CategoryItem href={`#${category}`} onClick={() => props.getCategory(category)}>{category}</CategoryItem>
+      props.arrayCategory.map((category, idx)=>{
+      return <CategoryItem key={idx} href={`#${category}`} onClick={() => props.getCategory(category)}>{category}</CategoryItem>
 
       })
     }
