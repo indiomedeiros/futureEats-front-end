@@ -17,6 +17,7 @@ export const Footer = styled.footer`
     position: fixed;
     bottom:0px;
     left: 0px;
+
 `;
 const IconContainer = styled.div`
     width: 33%;
