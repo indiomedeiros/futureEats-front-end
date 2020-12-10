@@ -13,7 +13,7 @@ const date = new Date(props.date);
     <>
     <p>{props.restaurantName}</p>
     <p>{formatDate}</p>
-    <h4>SUBTOTAL R${props.totalPrice}</h4>
+    <h4>SUBTOTAL R${props.totalPrice.toFixed(2)}</h4>
     
     </>
   );

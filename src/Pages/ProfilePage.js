@@ -33,13 +33,14 @@ export default function ProfilePage() {
 
   return (
     <>
-    <p>Meu Perfil</p>
+    <h5>Meu Perfil</h5>
     <p>{profile.name}</p>
     <p>{profile.email}</p>
     <p>{profile.cpf}</p>
-    <p>Endereço Cadastrado</p>
+    <h5>Endereço Cadastrado</h5>
     <p>{profile.address}</p>
-    <p>Históricos de Pedidos</p>
+    <h5>Históricos de Pedidos</h5>
+    <hr></hr>
     {orderHistory ? orderHistory.map(order => {
                 return <OrderCard 
                     key={order.createdAt}
