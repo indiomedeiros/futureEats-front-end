@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-color: #56b646;
   align-items: center;
   position: absolute;
-  bottom: 10px;
+  bottom: 60px;
   left: 0px;
   
 `;

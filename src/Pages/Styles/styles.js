@@ -55,7 +55,7 @@ export const UserData = styled.p`
   width: 328px;
   height: 18px;
   margin: 16px 16px 8px;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -68,7 +68,7 @@ export const AddresTitle = styled.p`
   width: 328px;
   height: 18px;
   margin: 16px 16px 8px;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
