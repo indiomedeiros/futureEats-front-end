@@ -11,12 +11,14 @@ const date = new Date(props.date);
 
   return (
 
-    <>
-    <p>{props.restaurantName}</p>
-    <p>{formatDate}</p>
-    <h4>SUBTOTAL R${props.totalPrice.toFixed(2)}</h4>
+    <Orders>
+
+      <Restaurant>{props.restaurantName}</Restaurant>
+      <OrderDate>{formatDate}</OrderDate>
+      <Subtotal>SUBTOTAL R${props.totalPrice.toFixed(2)}</Subtotal>
+    </Orders>
     
-    </>
+    
 
   );
 }

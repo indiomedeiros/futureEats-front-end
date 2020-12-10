@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 import  useAuthorization  from '../Hooks/useAuthetication';
 import OrderCard from '../Components/OrderCard/OrderCard'
 import useRequestData from "../Hooks/useRequestData";
-import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar, UserContainer, EditAddress, EditProfile } from './Styles/styles';
+import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar, UserContainer, EditAddress, EditProfile, RenderContainer } from './Styles/styles';
 import edit from '../Assets/Img/edit.png'
 
 
@@ -37,7 +37,9 @@ export default function ProfilePage() {
 
 
     <MainContainer>
-      <TitleBar>Meu Perfil</TitleBar>
+      
+      <RenderContainer marginTop='100px'>
+        <h4>Editar Perfil</h4>
       <UserContainer>
         <UserData>{profile.name}</UserData>
         <EditProfile src={edit} onClick={()=> history.push('/update_profile')}></EditProfile>
@@ -60,6 +62,7 @@ export default function ProfilePage() {
               }) : 
               <p>Você não realizou nenhum pedido</p>}
       
+      </RenderContainer>
     </MainContainer>
 
   );

@@ -70,7 +70,7 @@ export default function FeedPage() {
       arrayCategory={Categorys}
       getCategory={getCategory} />
 
-      <RenderContainer>
+      <RenderContainer marginTop='200px'>
  
       {filterList.length > 0 ? filterList.map((restaurant) => {
           return (

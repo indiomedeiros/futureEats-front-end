@@ -1,16 +1,19 @@
 import React, { useContext, useState } from "react";
+import { OrderDate, Restaurant } from "../Components/OrderCard/styles";
 import GlobalStateContext from "../Global/GlobalStateContext";
 import useAuthorization from "../Hooks/useAuthetication";
 import { api } from "../Services/api";
+import edit from '../Assets/Img/edit.png'
+import { RenderContainer, AddressContainer, UserData, AddresTitle, UserContainer, EditAddress } from "./Styles/styles";
+import { useHistory } from "react-router-dom";
+import CardProduto from "../Components/CardProduct/CardProduto";
+
 
 export default function CartPage() {
   useAuthorization()
   let subTotal = 0;
-  //compras no localStorage passadas da RestaurantPage
-  const [buyFood, setBuyFood] = useState(
-    JSON.parse(localStorage.getItem("buyFood"))
-  );
-  //opção de pagamento
+  const history = useHistory()
+  const [buyFood, setBuyFood] = useState(JSON.parse(localStorage.getItem("buyFood")) );
   const [paymentMethod, setPaymentMethod] = useState("");
   const {setDisplay} = useContext(GlobalStateContext)
   const adress = JSON.parse(localStorage.getItem("user"));
@@ -33,6 +36,9 @@ export default function CartPage() {
         if (arrayBuyFood.products[valueFood].count <= 1 ) {
           arrayBuyFood.products.splice(valueFood, 1);
           localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
+          if(arrayBuyFood.products.length <= 0){
+            localStorage.removeItem('buyFood')
+          }
           setBuyFood(arrayBuyFood);
         } else {
           arrayBuyFood.products[valueFood].count -= 1;
@@ -74,25 +80,38 @@ export default function CartPage() {
   };
 
   return (
-    <div>
-      <h1>endereço de entrega</h1>
-      {adress && <h5>{adress.address}</h5>}
-      {console.log("adress", adress.address)}
-      {console.log("buyFood - CartPage", buyFood)}
+    <RenderContainer marginTop='60px'>
+
+      <AddressContainer>
+        <AddresTitle>Endereço de entrega</AddresTitle>
+        {adress && <UserData>{adress.address}</UserData>}
+        <EditAddress src={edit} onClick={()=> history.push('/address_form')}></EditAddress>
+      </AddressContainer>
+      <UserContainer>
+         <Restaurant>{buyFood && buyFood.restaurant.name}</Restaurant>
+         <OrderDate>{buyFood && buyFood.restaurant.address}</OrderDate>
+         <OrderDate>{buyFood && 
+         buyFood.restaurant.deliveryTime-10 + ' - '+ buyFood.restaurant.deliveryTime + ' Min'}
+         </OrderDate>
+      </UserContainer>
+
       {buyFood && buyFood.products &&
         buyFood.products.map((food) => {
           return (
-            <div>
-              <h1>{food.category}</h1>
-              <p>{food.description}</p>
-              <p>{food.name}</p>
-              <img width="50px" src={food.photoUrl} />
-              <p>
-                {(food.price * food.count).toFixed(2)}, quantidade: {food.count}
-              </p>
-              <button onClick={() => removeFoodCart(food)}>remover</button>
-            </div>
-          );
+            <CardProduto
+            restaurant={buyFood.restaurant}
+            id={food.category}
+            key={food.id}
+            food={food}
+            name={food.name}
+            image={food.photoUrl}
+            description={food.description}
+            price={food.price.toFixed(2)}
+            onClick={() => removeFoodCart(food)}
+            count={food.count}
+            
+            />
+            );
         })}
       <p>R${subTotal.toFixed(2)}</p>
       <h3>Forma de pagamento</h3>
@@ -121,6 +140,6 @@ export default function CartPage() {
       </form>
 
       {console.log("formBuy", paymentMethod)}
-    </div>
+    </RenderContainer>
   );
 }

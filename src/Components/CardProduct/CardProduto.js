@@ -118,6 +118,10 @@ export default function CardProduto(props) {
       setShowCount(false);
       setDisplay(true);
     }
+    if(props.onClick){
+      setShowCount(true);
+      setDisplay(false);
+    }
   }, [count]);
 
   const addFoodCart = (food) => {
@@ -135,7 +139,7 @@ export default function CardProduto(props) {
         localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
       } else {
         const arrayBuyFood = JSON.parse(localStorage.getItem("buyFood"));
-        if (props.restaurant === arrayBuyFood.restaurant) {
+        if (props.restaurant.id === arrayBuyFood.restaurant.id) {
           arrayBuyFood.products.push(newFood);
           localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
         } else {
@@ -171,7 +175,7 @@ export default function CardProduto(props) {
 
   return (
     <Container>
-      <CountContainer display={showCount}>{count}</CountContainer>
+      <CountContainer display={showCount}>{props.count? props.count : count}</CountContainer>
       <Image src={props.image} />
       <InfoContainer>
         <Title>{props.name}</Title>
@@ -182,7 +186,8 @@ export default function CardProduto(props) {
         Adicionar
       </AddButton>
       <RemoveButton
-        onClick={() => RemoveFoodCart(props.food)}
+      
+        onClick={props.onClick? props.onClick : () => RemoveFoodCart(props.food)}
         display={display}
       >
         Remover

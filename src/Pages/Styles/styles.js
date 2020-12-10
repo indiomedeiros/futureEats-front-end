@@ -82,14 +82,21 @@ export const UserContainer = styled.div`
   height: 106px;
   margin: 0px 0;
   padding: 5px;
+  position: relative;
 `
 
 export const AddressContainer = styled.div`
-  width: 360px;
+  width:100%;
   height: 76px;
   margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
   padding: 5px;
   background-color: #eeeeee;
+  position: relative;
 `
 
 export const Login_Sign_Container = styled(MainContainer)`
@@ -136,11 +143,11 @@ export const RenderContainer = styled.div`
     flex-flow: row wrap;
     align-items: center;
     margin: auto;
-    margin-top: 200px;
+    margin-top: ${props=>props.marginTop};
     justify-content: center;
     overflow: scroll;
-    max-height: 70vh;
-    width: 100vw;
+    max-height: 80vh;
+    width: 110vw;
     padding-bottom: 80px;
    
 

@@ -5,7 +5,8 @@ import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
 import {FormContainer, 
-        Button} 
+        Button,
+        RenderContainer} 
         from './Styles/styles'
 import InputComponent from '../Components/Inputs/InputComponent'
 import styled from 'styled-components'
@@ -59,6 +60,8 @@ export default function AddressPage() {
   }
   
   return (
+    <RenderContainer marginTop='100px'> 
+
     <EditContainer>
       <TextContainer>
         <h4>Endereço</h4>
@@ -120,5 +123,6 @@ export default function AddressPage() {
         <Button>Salvar</Button>
       </FormContainer>
     </EditContainer>
+    </RenderContainer>
   );
 }

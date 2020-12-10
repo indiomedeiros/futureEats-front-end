@@ -4,7 +4,7 @@ import InputComponent from '../Components/Inputs/InputComponent';
 import  useAuthorization  from '../Hooks/useAuthetication';
 import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
-import { Button, FormContainer } from "../Pages/Styles/styles"
+import { Button, FormContainer, RenderContainer } from "../Pages/Styles/styles"
 import styled from 'styled-components'
 
 
@@ -63,6 +63,8 @@ export default function EditProfilePage() {
   }
 
   return (
+    <RenderContainer marginTop='200px'>
+
     <EditContainer>
       <TextContainer>
         <h4>Editar</h4>
@@ -96,5 +98,6 @@ export default function EditProfilePage() {
         <Button>Salvar</Button>
       </FormContainer>
     </EditContainer>
+    </RenderContainer>
   );
 }

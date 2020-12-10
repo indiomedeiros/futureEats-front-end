@@ -32,7 +32,7 @@ export default function RestaurantPage() {
   return (
     <MainContainer>
       <CategoryComponent arrayCategory={categorys} getCategory={getCategory} />
-      <RenderContainer>
+      <RenderContainer marginTop='180px'>
         <CardRestaurant
           image={restaurantData && restaurantData.restaurant.logoUrl}
           restaurant={restaurantData && restaurantData.restaurant.name}
@@ -56,7 +56,7 @@ export default function RestaurantPage() {
           restaurantData.restaurant.products.map((food) => {
             return (
               <CardProduto
-                restaurant={params.id}
+                restaurant={restaurantData.restaurant}
                 id={food.category}
                 key={food.id}
                 food={food}
@@ -65,14 +65,8 @@ export default function RestaurantPage() {
                 description={food.description}
                 price={food.price.toFixed(2)}
               />
-              // <p>Categoria: <b>{food.category}</b></p>
-              // <p>Nome :{food.name}</p>
-              // <p>Descrição:{food.description}</p>
-
-              // <p>R$ {food.price.toFixed(2)}</p>
-              // <button onClick={() => {addFoodCart(food)}}>adicionar</button>
-              // </CardProduto>
-            );
+            
+              );
           })}
       </RenderContainer>
     </MainContainer>
