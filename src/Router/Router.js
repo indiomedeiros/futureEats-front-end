@@ -13,6 +13,7 @@ import CartPage from '../Pages/CartPage';
 import { MainContainer } from '../Pages/Styles/styles';
 import BottomMenu from '../Components/BottomMenu/BottomMenu';
 import Header from '../Components/HeaderMenu/Hearder';
+import OnGoingOrder from '../Components/onGoingOrder/OnGoingOrder';
 
 
 export default function Router() {
@@ -32,6 +33,7 @@ export default function Router() {
             <Route exact path="/address_form" component={AddressPage} />
             <Route exact path="/cart" component={CartPage} />
         </Switch>
+        <OnGoingOrder/>
         <BottomMenu/>
       </MainContainer>
     </GlobalState>

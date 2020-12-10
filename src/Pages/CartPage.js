@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import GlobalStateContext from "../Global/GlobalStateContext";
+import useAuthorization from "../Hooks/useAuthetication";
 import { api } from "../Services/api";
 
 export default function CartPage() {
+  useAuthorization()
   let subTotal = 0;
   //compras no localStorage passadas da RestaurantPage
   const [buyFood, setBuyFood] = useState(
@@ -9,11 +12,12 @@ export default function CartPage() {
   );
   //opção de pagamento
   const [paymentMethod, setPaymentMethod] = useState("");
+  const {setDisplay} = useContext(GlobalStateContext)
   const adress = JSON.parse(localStorage.getItem("user"));
 
   
-  buyFood &&
-    buyFood.forEach((food) => {
+  buyFood && buyFood.products &&
+    buyFood.products.forEach((food) => {
       //quantidade
       subTotal += food.price * food.count;
     });
@@ -22,18 +26,19 @@ export default function CartPage() {
     //remove o produto do carrinho/state/localStorage
     if (localStorage.getItem("buyFood")) {
       const arrayBuyFood = JSON.parse(localStorage.getItem("buyFood"));
-      const valueFood = arrayBuyFood.findIndex(
+      const valueFood = arrayBuyFood.products.findIndex(
         (food) => food.id === foodRemoving.id
       );
       if (valueFood > -1) {
-        if (arrayBuyFood[valueFood].count < 2) {
-          arrayBuyFood.splice(valueFood, 1);
+        if (arrayBuyFood.products[valueFood].count <= 1 ) {
+          arrayBuyFood.products.splice(valueFood, 1);
           localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
           setBuyFood(arrayBuyFood);
         } else {
-          arrayBuyFood[valueFood].count -= 1;
+          arrayBuyFood.products[valueFood].count -= 1;
           localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
           setBuyFood(arrayBuyFood);
+          
         }
       }
     }
@@ -45,7 +50,7 @@ export default function CartPage() {
     //array de produtos para fazer requisição
     if (buyFood && paymentMethod) {
       const body = {
-        products: buyFood.map((food) => {
+        products: buyFood.products.map((food) => { 
           return { id: food.id, quantity: food.count };
         }),
         paymentMethod: paymentMethod,
@@ -53,25 +58,29 @@ export default function CartPage() {
       console.log("body", body);
       
       //requisição 
-      // api
-      //   .post("/restaurants/:restaurantId/order", body)
-      //   .then((response) => {
-      //     localStorage.removeItem("buyFood")
-      //   })
-      //   .catch((error) => {
-      //     console.log(error.message);
-      //   });
+      api
+        .post(`/restaurants/${buyFood.restaurant}/order`, body)
+        .then((response) => {
+          console.log("compra", response.message)
+          localStorage.removeItem("buyFood")
+          setBuyFood(undefined)
+          setDisplay(true)
+        })
+        .catch((error) => {
+          alert("Já existe um pedido em andamento")
+          console.log(error);
+        });
     }
   };
 
   return (
     <div>
       <h1>endereço de entrega</h1>
-      <h5>{adress.address}</h5>
+      {adress && <h5>{adress.address}</h5>}
       {console.log("adress", adress.address)}
       {console.log("buyFood - CartPage", buyFood)}
-      {buyFood &&
-        buyFood.map((food) => {
+      {buyFood && buyFood.products &&
+        buyFood.products.map((food) => {
           return (
             <div>
               <h1>{food.category}</h1>
