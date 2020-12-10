@@ -9,8 +9,8 @@ const Icon = styled.svg.attrs({
 
 const Svg = styled(Icon)`
 
-    width: 50px;
-    height: 50px;
+    width: 27px;
+    height: 30px;
 
 `
 

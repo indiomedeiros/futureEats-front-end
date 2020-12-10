@@ -12,10 +12,10 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 100px;
+    height: 60px;
     background-color: white;
     position: absolute;
-    bottom: 0px;
+    bottom:0px;
     left: 0px;
 `;
 const IconContainer = styled.div`

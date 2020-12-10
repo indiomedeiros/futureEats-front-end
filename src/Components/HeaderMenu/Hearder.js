@@ -12,13 +12,13 @@ export const HeaderTop = styled.footer`
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    height: 120px;
+    height: 60px;
     background-color: white;
     position: absolute;
     top: 0px;
     left: 0px;
     padding-left: 20px;
-    border-bottom: 1px solid black;
+    border-bottom: 0.5px solid black;
 
 `;
 const IconContainer = styled.div`
@@ -27,7 +27,7 @@ const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     height: 100%;
-    font-size: 50px;
+    font-size: 30px;
 `
 
 export default function Header(props) {

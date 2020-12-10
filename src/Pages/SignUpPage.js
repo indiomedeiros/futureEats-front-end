@@ -53,7 +53,7 @@ export default function SignUpPage() {
   return (
     <Login_Sign_Container>
       <LogoInvert src={Logo}/>
-
+      <h4>Resgistre-se</h4>
     <FormContainer onSubmit={signingUpUser}>
       
       <InputComponent 

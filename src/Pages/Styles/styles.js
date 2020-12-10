@@ -24,7 +24,7 @@ export const FormContainer = styled.form`
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     height: max-content;
     width: 100%;
@@ -36,13 +36,13 @@ export const SearchContainer = styled.div`
     justify-content: space-between;
     width: 85%;
     position: absolute;
-    top:142px;
-    left: 70px;
+    top:70px;
+    left: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
     border-radius: 2px;
     border: solid 1px grey;
-    font-size: 46px;
+    font-size: 30px;
     padding-left: 20px;
     
 `
@@ -50,21 +50,25 @@ export const SearchContainer = styled.div`
 export const RenderContainer = styled.div`
 
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow: scroll ;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: auto;
+    margin-top: 250px;
+    justify-content: center;
+    
+    overflow: scroll;
+    min-height: 70vh;
     width: 100vw;
-    height: 70vh;
-    position: absolute;
-    top:400px;
+    padding-bottom: 100px;
+   
 
 `
 export const LogoInvert = styled.img`
 
-    width: 240px;
-    height: 160px;
-    margin: 16px;
+    width: 112px;
+    height: 65px;
+  
 
 `
 
@@ -75,32 +79,19 @@ export const Button = styled.button`
     outline: none;
     color: black;
     background-color: #5FB74A;
-    height: 52px;
+    height: 42px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
 `
 export const SearchInput = styled.input`
 
     width: 90%;
-    height: 56px;
-    padding: 16px 16px 16px 17px;
+    height: 45px;
+   
     border: none;
     outline: none;
-    font-size: 35px;
-
-`
-export const LogoRestaurant = styled.div`
-
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    overflow: hidden;
-    height: 300px;
+    font-size: 20px;
 
 `

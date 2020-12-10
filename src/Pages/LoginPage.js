@@ -62,7 +62,7 @@ export default function LoginPage() {
     <Login_Sign_Container>
         <LogoInvert src={Logo}/>
 
-        <h3>Entrar</h3>
+        <h4>Entrar</h4>
     <FormContainer onSubmit={loggingUser}>
           <InputComponent
               type="email"
