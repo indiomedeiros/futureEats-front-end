@@ -5,12 +5,28 @@ import {useForm}  from '../Hooks/useForm'
 import {api} from '../Services/api'
 import Logo from '../Assets/Img/logo-future-eats-invert@3x.png'
 import {FormContainer, 
-        LogoInvert, 
-        MainContainer, 
         Button} 
         from './Styles/styles'
 import InputComponent from '../Components/Inputs/InputComponent'
+import styled from 'styled-components'
 
+
+export const EditContainer = styled.div`
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+` 
+
+export const TextContainer = styled.div`
+    position: sticky;
+    margin-top: 2px;
+    margin-bottom: 5%;
+    z-index: 2;
+`
 
 
 export default function AddressPage() {
@@ -43,8 +59,10 @@ export default function AddressPage() {
   }
   
   return (
-    <MainContainer>
-      <LogoInvert src={Logo}/>
+    <EditContainer>
+      <TextContainer>
+        <h4>Endereço</h4>
+      </TextContainer>
       <FormContainer onSubmit={addAdress}>
         <InputComponent
           type="text"
@@ -52,7 +70,8 @@ export default function AddressPage() {
           value={form.street}
           onChange={handleChange} 
           required
-          label='Rua'
+          label='Logradouro'
+          placeholder="Rua / Av"
             />
         <InputComponent
           type="text"
@@ -60,7 +79,8 @@ export default function AddressPage() {
           value={form.number}
           onChange={handleChange} 
           required
-          label='Numero'
+          label='Numero'          
+          placeholder="Número"
           />      
         <InputComponent
           type="text"
@@ -68,6 +88,7 @@ export default function AddressPage() {
           value={form.complement}
           onChange={handleChange} 
           label='Complemento'
+          placeholder="Apto / Bloco"
           />
         <InputComponent
           type="text"
@@ -76,6 +97,7 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           label='Bairro'
+          placeholder="Bairro"
           />
         <InputComponent
           type="text"
@@ -84,6 +106,7 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           label='Cidade'
+          placeholder="Cidade"
             />
         <InputComponent
           type="text"
@@ -92,9 +115,10 @@ export default function AddressPage() {
           onChange={handleChange} 
           required
           label='Estado'
+          placeholder="Estado"
             />
         <Button>Salvar</Button>
       </FormContainer>
-    </MainContainer>
+    </EditContainer>
   );
 }
