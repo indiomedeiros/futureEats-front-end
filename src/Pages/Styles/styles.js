@@ -6,8 +6,7 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
-    max-height: max-content;
+    height: 100vh;
     width: 100vw;
     position: relative;
 ` 
@@ -58,7 +57,7 @@ export const RenderContainer = styled.div`
     margin-top: 200px;
     justify-content: center;
     overflow: scroll;
-    min-height: 70vh;
+    max-height: 70vh;
     width: 100vw;
     padding-bottom: 80px;
    

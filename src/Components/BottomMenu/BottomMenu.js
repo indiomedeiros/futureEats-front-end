@@ -14,7 +14,7 @@ export const Footer = styled.footer`
     width: 100%;
     height: 60px;
     background-color: white;
-    position: absolute;
+    position: fixed;
     bottom:0px;
     left: 0px;
 `;
