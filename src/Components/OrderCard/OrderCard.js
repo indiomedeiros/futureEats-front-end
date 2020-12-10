@@ -10,10 +10,13 @@ const date = new Date(props.date);
   const formatDate = newDate.split("de ")
 
   return (
-    <Orders>
-      <Restaurant>{props.restaurantName}</Restaurant>
-      <OrderDate>{formatDate}</OrderDate>
-      <Subtotal>SUBTOTAL R${props.totalPrice}</Subtotal>
-    </Orders>
+
+    <>
+    <p>{props.restaurantName}</p>
+    <p>{formatDate}</p>
+    <h4>SUBTOTAL R${props.totalPrice.toFixed(2)}</h4>
+    
+    </>
+
   );
 }

@@ -34,6 +34,8 @@ export default function ProfilePage() {
 
 
   return (
+
+
     <MainContainer>
       <TitleBar>Meu Perfil</TitleBar>
       <UserContainer>
@@ -59,5 +61,6 @@ export default function ProfilePage() {
               <p>Você não realizou nenhum pedido</p>}
       
     </MainContainer>
+
   );
 }
