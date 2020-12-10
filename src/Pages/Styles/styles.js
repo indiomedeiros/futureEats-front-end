@@ -9,6 +9,7 @@ export const MainContainer = styled.div`
     height: 100vh;
     width: 100vw;
     position: relative;
+   
 ` 
 export const Login_Sign_Container = styled(MainContainer)`
 
