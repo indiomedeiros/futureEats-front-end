@@ -6,7 +6,8 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: max-content;
     width: 100vw;
     position: relative;
 ` 
@@ -54,13 +55,12 @@ export const RenderContainer = styled.div`
     flex-flow: row wrap;
     align-items: center;
     margin: auto;
-    margin-top: 250px;
+    margin-top: 200px;
     justify-content: center;
-    
     overflow: scroll;
     min-height: 70vh;
     width: 100vw;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
    
 
 `
