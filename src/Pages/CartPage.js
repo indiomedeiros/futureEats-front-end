@@ -65,7 +65,7 @@ export default function CartPage() {
       
       //requisição 
       api
-        .post(`/restaurants/${buyFood.restaurant}/order`, body)
+        .post(`/restaurants/${buyFood.restaurant.id}/order`, body)
         .then((response) => {
           console.log("compra", response.message)
           localStorage.removeItem("buyFood")
