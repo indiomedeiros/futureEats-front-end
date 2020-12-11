@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Orders = styled.div`
-  width: 328px;
+  width: 80%;
   font-weight: bold;
-  margin: 7px 0 0 4px;
+  margin:auto;
+  margin-bottom: 8px;
   padding: 16px;
   border-radius: 8px;
   border: solid 1px grey;

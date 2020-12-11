@@ -105,7 +105,7 @@ export default function CartPage() {
   };
 
   return (
-    <RenderContainer>
+    <RenderContainer bottom='100px'>
       <Bar>
         <Title>Meu Carrinho</Title>
       </Bar>

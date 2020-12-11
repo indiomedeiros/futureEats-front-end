@@ -19,7 +19,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <GlobalState>
-        <MainContainer>
+        
           <Switch>
             <Route exact path="/" component={InitialPage} />
             <Route exact path="/login" component={LoginPage} />
@@ -48,7 +48,6 @@ export default function Router() {
           </Switch>
           <OnGoingOrder />
           <BottomMenu />
-        </MainContainer>
       </GlobalState>
     </BrowserRouter>
   );

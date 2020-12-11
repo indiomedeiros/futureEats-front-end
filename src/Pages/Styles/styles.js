@@ -5,23 +5,15 @@ export const MainContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 1400px;
+  margin-bottom: 80px;
   width: 100vw;
 `;
-export const MainContainerProfilePage = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+export const MainContainerProfilePage = styled(MainContainer)`
+  position: relative;
   height: 100vh;
-  width: 100vw;
 `;
-export const MainContainerRestaurant = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
+export const MainContainerRestaurant = styled(MainContainer)`
+
 `;
 
 export const TitleBar = styled.h4`
@@ -50,16 +42,15 @@ export const EditAddress = styled.img`
 `;
 
 export const OrderBar = styled.h4`
-  margin-left: 4px;
   width: 360px;
   height: 20px;
   margin-top: 10px;
-  //margin-bottom: 10px;
-  text-align: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0.5px 0 0 black;
-  background-color: #ffffff;
+  margin: auto;
+  margin-bottom: 8px;
+  text-align: start;
+  padding-bottom: 5px;
+ border-bottom: 1px solid black;
+ font-weight: lighter;
 `;
 
 export const UserData = styled.p`
@@ -89,6 +80,7 @@ export const UserContainer = styled.div`
 export const AddressContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
   height: 76px;
   padding: 16px 0px;
@@ -115,8 +107,7 @@ export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   width: 85%;
-  margin-top: 150px;
-  margin-bottom: 0px;
+  margin-top: 90px;
   border-radius: 2px;
   border: solid 1px grey;
   font-size: 30px;
@@ -128,9 +119,11 @@ export const H4 = styled.h4`
 `;
 export const RenderContainer = styled.div`
   box-sizing: border-box;
+  margin-bottom: ${props=> props.bottom};
   padding: 0px;
   width: 100vw;
-  height: 100vh;
+  min-height: 60vh;
+  overflow:scroll;
 `;
 export const LogoInvert = styled.img`
   width: 112px;

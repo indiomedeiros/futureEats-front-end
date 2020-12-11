@@ -66,7 +66,7 @@ export default function EditProfilePage() {
   };
 
   return (
-    <RenderContainer marginTop="200px">
+    <RenderContainer>
       <EditContainer>
         <TextContainer>
           <h4>Editar</h4>

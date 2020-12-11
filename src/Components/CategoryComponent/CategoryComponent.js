@@ -5,9 +5,6 @@ const CategoryContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  top: 110px;
-  left: 10px;
   overflow: scroll;
   width: 90vw;
 `;

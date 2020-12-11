@@ -38,7 +38,7 @@ export default function ProfilePage() {
 
   return (
     <MainContainerProfilePage>
-      <RenderContainer marginTop="100px">
+      <RenderContainer >
         <H4>Editar Perfil</H4>
         <UserContainer>
           <UserData>{profile.name}</UserData>

@@ -73,7 +73,6 @@ export default function FeedPage() {
           getCategory={getCategory}
         />
       </DivFeedScroll>
-
       <RenderContainer>
         {filterList.length > 0 ? (
           filterList.map((restaurant) => {
