@@ -5,10 +5,11 @@ import GlobalStateContext from "../../Global/GlobalStateContext";
 export const Container = styled.div`
   display: flex;
   height: 118px;
-  width: 110vw;
+  width: 100vw;
+  
   background-color: #56b646;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 45px;
   left: 0px;
 `;
@@ -34,9 +35,9 @@ const P = styled.p`
   margin: 0px 0px 0px 0px;
 `;
 const Name = styled(P)`
-  font-weight: normal;
   margin: 5px 0px 0px 0px;
   color: black;
+  font-weight: bold;
 `;
 const Price = styled.h4`
   margin: 2px 0px;

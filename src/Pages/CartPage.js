@@ -30,20 +30,23 @@ import CardProduto from "../Components/CardProduct/CardProduto";
 
 export default function CartPage() {
   useAuthorization();
+  //contador subtotal
   let subTotal = 0;
   const history = useHistory();
   const [buyFood, setBuyFood] = useState(
     JSON.parse(localStorage.getItem("buyFood"))
   );
+  //contador de frete
   let shipping = 0;
   const [paymentMethod, setPaymentMethod] = useState("");
   const { setDisplay } = useContext(GlobalStateContext);
   const adress = JSON.parse(localStorage.getItem("user"));
 
+
   buyFood &&
     buyFood.products &&
     buyFood.products.forEach((food) => {
-      //quantidade
+      //calculo para a subtotal e frete
       shipping = buyFood.restaurant.shipping;
       subTotal += food.price * food.count;
     });

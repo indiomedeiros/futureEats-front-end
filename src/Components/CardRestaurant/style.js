@@ -33,7 +33,7 @@ export const Container = styled.div`
 `;
 export const Image = styled.img`
   width: 100%;
-  height: 120px;
+  height: 230px;
 `;
 
 export const TitleContainer = styled.div`
@@ -46,6 +46,7 @@ export const Title = styled.p`
   color: #5cb646;
   font-size: 16px;
   margin: 5px;
+  font-weight: bolder;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 `;
 export const InfoContainer = styled.div`
