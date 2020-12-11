@@ -3,7 +3,6 @@ import React from "react";
 import { useHistory, useParams } from "react-router-dom";
 import CardRestaurant from "../Components/CardRestaurant/CardRestaurant";
 import CategoryComponent from "../Components/CategoryComponent/CategoryComponent";
-import { goToCartPage } from "../Coordination/coordinator";
 import CardProduto from "../Components/CardProduct/CardProduto";
 import useAuthorization from "../Hooks/useAuthetication";
 import useRequestData from "../Hooks/useRequestData";
@@ -23,16 +22,14 @@ export default function RestaurantPage() {
     "Bebida",
     "Sorvete",
   ];
-  const history = useHistory();
   const getCategory = (category) => {
     //placebo Function
   };
 
-  
   return (
     <MainContainer>
       <CategoryComponent arrayCategory={categorys} getCategory={getCategory} />
-      <RenderContainer marginTop='180px'>
+      <RenderContainer marginTop="180px">
         <CardRestaurant
           image={restaurantData && restaurantData.restaurant.logoUrl}
           restaurant={restaurantData && restaurantData.restaurant.name}
@@ -65,8 +62,7 @@ export default function RestaurantPage() {
                 description={food.description}
                 price={food.price.toFixed(2)}
               />
-            
-              );
+            );
           })}
       </RenderContainer>
     </MainContainer>

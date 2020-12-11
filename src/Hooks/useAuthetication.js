@@ -1,18 +1,12 @@
-import { useEffect } from 'react';
-import { useHistory} from 'react-router-dom'
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
+export default function useAuthorization() {
+  const history = useHistory();
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
 
-export default function useAuthorization(){
-
-
-    const history = useHistory()
-
-    useEffect(()=>{
-
-        const token = localStorage.getItem('token')
-
-        !token && history.push('/')
-    }, [history])
-
+    !token && history.push("/");
+  }, [history]);
 }

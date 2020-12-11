@@ -1,27 +1,24 @@
-import React, { useEffect, useState  } from "react";
-import {addFoodCart, RemoveFoodCart} from './script'
-import {Container, 
-        CountContainer, 
-        Image, 
-        Title, 
-        Information, 
-        InfoContainer,
-        Price,
-        AddButton,
-        RemoveButton,
-        Input,
-        Button
-      } from './style'
-
-
+import React, { useEffect, useState } from "react";
+import { addFoodCart, RemoveFoodCart } from "./script";
+import {
+  Container,
+  CountContainer,
+  Image,
+  Title,
+  Information,
+  InfoContainer,
+  Price,
+  AddButton,
+  RemoveButton,
+  Input,
+  Button,
+} from "./style";
 
 export default function CardProduto(props) {
-  
   const [display, setDisplay] = useState(true);
   const [showCount, setShowCount] = useState(false);
   const [count, setCount] = useState(0);
   const [select, setSelect] = useState(false);
-
 
   useEffect(() => {
     if (count > 0) {
@@ -31,7 +28,7 @@ export default function CardProduto(props) {
       setShowCount(false);
       setDisplay(true);
     }
-    if(props.onClick){
+    if (props.onClick) {
       setShowCount(true);
       setDisplay(false);
     }
@@ -39,7 +36,9 @@ export default function CardProduto(props) {
 
   return (
     <Container>
-      <CountContainer display={showCount}>{props.count? props.count : count}</CountContainer>
+      <CountContainer display={showCount}>
+        {props.count ? props.count : count}
+      </CountContainer>
       <Image src={props.image} />
       <InfoContainer>
         <Title>{props.name}</Title>
@@ -50,8 +49,11 @@ export default function CardProduto(props) {
         Adicionar
       </AddButton>
       <RemoveButton
-      
-        onClick={props.onClick? props.onClick : () => RemoveFoodCart(props.food, setCount)}
+        onClick={
+          props.onClick
+            ? props.onClick
+            : () => RemoveFoodCart(props.food, setCount)
+        }
         display={display}
       >
         Remover
@@ -63,7 +65,17 @@ export default function CardProduto(props) {
           value={count}
           onChange={(e) => setCount(e.target.value)}
         />
-        <Button onClick={() => addFoodCart(props.food, setSelect, setCount, props.restaurant, count)}>
+        <Button
+          onClick={() =>
+            addFoodCart(
+              props.food,
+              setSelect,
+              setCount,
+              props.restaurant,
+              count
+            )
+          }
+        >
           adicionar pedido
         </Button>
       </dialog>

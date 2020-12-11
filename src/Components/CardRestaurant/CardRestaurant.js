@@ -1,31 +1,35 @@
-import React from 'react';
-import styled from 'styled-components';
-import {Container,
-        Title,
-        Image,
-        InfoContainer,
-        TitleContainer,
-        Information
-} from './style'
-
+import React from "react";
+import styled from "styled-components";
+import {
+  Container,
+  Title,
+  Image,
+  InfoContainer,
+  TitleContainer,
+  Information,
+} from "./style";
 
 export default function CardRestaurant(props) {
   return (
     <Container onClick={props.onClick}>
-        <Image src={props.image}/>
-        <TitleContainer>
-             <Title>{props.restaurant}</Title>
-        </TitleContainer>
-        {props.category && <InfoContainer>
-            <Information>{props.category}</Information>
-        </InfoContainer>}
+      <Image src={props.image} />
+      <TitleContainer>
+        <Title>{props.restaurant}</Title>
+      </TitleContainer>
+      {props.category && (
         <InfoContainer>
-            <Information>{props.deliveryTime}</Information>
-            <Information>{props.deliveryPrice}</Information>
+          <Information>{props.category}</Information>
         </InfoContainer>
-        {props.address && <InfoContainer>
-            <Information>{props.address}</Information>
-        </InfoContainer>}
+      )}
+      <InfoContainer>
+        <Information>{props.deliveryTime}</Information>
+        <Information>{props.deliveryPrice}</Information>
+      </InfoContainer>
+      {props.address && (
+        <InfoContainer>
+          <Information>{props.address}</Information>
+        </InfoContainer>
+      )}
     </Container>
   );
 }

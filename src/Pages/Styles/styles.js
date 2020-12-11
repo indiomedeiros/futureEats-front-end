@@ -8,9 +8,6 @@ export const MainContainer = styled.div`
   margin-top: 50px;
   height: 100vh;
   width: 100vw;
- 
-  
-  
 `;
 
 export const TitleBar = styled.h4`
@@ -110,17 +107,12 @@ export const SearchContainer = styled.div`
   font-size: 30px;
   padding-left: 20px;
 `;
-export const DivFeedScroll = styled.div `
-  
-
-`
-export const H4 = styled.h4 `
-   text-align: center;
-
-`
+export const DivFeedScroll = styled.div``;
+export const H4 = styled.h4`
+  text-align: center;
+`;
 export const RenderContainer = styled.div`
   box-sizing: border-box;
-  margin-top: 20px;
   padding: 0px;
   width: 100vw;
   height: 100vh;
@@ -190,8 +182,6 @@ export const Bar = styled.div`
 `;
 
 export const Title = styled.h1`
-  width: 91px;
-  height: 19px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: bolder;

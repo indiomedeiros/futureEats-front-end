@@ -88,14 +88,11 @@ export default function CartPage() {
       api
         .post(`/restaurants/${buyFood.restaurant.id}/order`, body)
         .then((response) => {
-
-          console.log("compra", response.message)
-          localStorage.removeItem("buyFood")
-          setBuyFood(undefined)
-          setDisplay(true)
-          alert("Pedido Realizado! Bom apetite!")
-          history.push('/')
-
+          localStorage.removeItem("buyFood");
+          setBuyFood(undefined);
+          setDisplay(true);
+          alert("Pedido Realizado! Bom apetite!");
+          history.push("/");
         })
         .catch((error) => {
           alert("Já existe um pedido em andamento");
@@ -130,7 +127,7 @@ export default function CartPage() {
               buyFood.restaurant.deliveryTime +
               " Min"}
         </RestaurantAdress>
-        {console.log("buy fodd")}
+
         {buyFood &&
           buyFood.products &&
           buyFood.products.map((food) => {
@@ -187,7 +184,6 @@ export default function CartPage() {
         {(!subTotal || !paymentMethod) && (
           <ButtonPayCartDisenable>Confirmar pedido</ButtonPayCartDisenable>
         )}
-        {console.log("formBuy", paymentMethod)}
       </DivPayment>
     </RenderContainer>
   );
