@@ -71,6 +71,8 @@ export default function CartPage() {
           localStorage.removeItem("buyFood")
           setBuyFood(undefined)
           setDisplay(true)
+          alert("Pedido Realizado! Bom apetite!")
+          history.push('/')
         })
         .catch((error) => {
           alert("Já existe um pedido em andamento")
