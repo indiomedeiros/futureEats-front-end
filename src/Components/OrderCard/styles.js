@@ -16,7 +16,7 @@ height: 18px;
 margin: 0 0 9px;
 font-family: 'Roboto';
 font-size: 16px;
-font-weight: normal;
+font-weight: bold;
 font-stretch: normal;
 font-style: normal;
 line-height: normal;
@@ -30,7 +30,7 @@ export const OrderDate = styled.p`
   margin: 9px 0 7px;
   font-family: 'Roboto';
   font-size: 12px;
-  font-weight: normal;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;

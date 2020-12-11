@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 import  useAuthorization  from '../Hooks/useAuthetication';
 import OrderCard from '../Components/OrderCard/OrderCard'
 import useRequestData from "../Hooks/useRequestData";
-import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar, UserContainer, EditAddress, EditProfile, RenderContainer } from './Styles/styles';
+import { MainContainer, TitleBar, UserData, AddressContainer, AddresTitle, OrderBar, UserContainer, EditAddress, EditProfile, RenderContainer, H4 } from './Styles/styles';
 import edit from '../Assets/Img/edit.png'
 
 
@@ -39,7 +39,7 @@ export default function ProfilePage() {
     <MainContainer>
       
       <RenderContainer marginTop='100px'>
-        <h4>Editar Perfil</h4>
+        <H4>Editar Perfil</H4>
       <UserContainer>
         <UserData>{profile.name}</UserData>
         <EditProfile src={edit} onClick={()=> history.push('/update_profile')}></EditProfile>

@@ -4,10 +4,12 @@ import { useHistory } from "react-router-dom";
 import useAuthorization from "../Hooks/useAuthetication";
 import {goToRestaurantPage} from '../Coordination/coordinator'
 import SearchIcon from '@material-ui/icons/Search';
-import {MainContainer, SearchInput, SearchContainer,RenderContainer}from './Styles/styles'
+import {MainContainer, SearchInput, SearchContainer,RenderContainer, DivFeedScroll}from './Styles/styles'
 import useRequestData from "../Hooks/useRequestData";
 import CategoryComponent from "../Components/CategoryComponent/CategoryComponent";
 import CardRestaurant from "../Components/CardRestaurant/CardRestaurant";
+
+
 
 export default function FeedPage() {
   useAuthorization();
@@ -65,11 +67,13 @@ export default function FeedPage() {
           placeholder="search restaurants"
         />
       </SearchContainer>
-     <CategoryComponent
-      arrayCategory={Categorys}
-      getCategory={getCategory} />
+      <DivFeedScroll>
+        <CategoryComponent
+          arrayCategory={Categorys}
+          getCategory={getCategory} />
+      </DivFeedScroll>
 
-      <RenderContainer marginTop='200px'>
+      <RenderContainer>
  
       {filterList.length > 0 ? filterList.map((restaurant) => {
           return (
