@@ -30,7 +30,7 @@ export default function FeedPage() {
   const getCategory = (category) => {
     const restaurants = restaurantList.filter((restaurant) => {
       if (category === "Todos") {
-        return restaurant.category === restaurant.category;
+        return restaurant.category 
       } else {
         return restaurant.category === category;
       }
@@ -90,7 +90,7 @@ export default function FeedPage() {
                   restaurant.deliveryTime +
                   " Min"
                 }
-                deliveryPrice={"Frete" + "R$" + restaurant.shipping.toFixed(2)}
+                deliveryPrice={"Frete" +" " + "R$" + " " + restaurant.shipping.toFixed(2)}
               />
             );
           })

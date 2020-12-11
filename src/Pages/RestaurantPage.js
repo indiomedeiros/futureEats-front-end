@@ -1,12 +1,12 @@
 import React from "react";
 
-import { useHistory, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import CardRestaurant from "../Components/CardRestaurant/CardRestaurant";
 import CategoryComponent from "../Components/CategoryComponent/CategoryComponent";
 import CardProduto from "../Components/CardProduct/CardProduto";
 import useAuthorization from "../Hooks/useAuthetication";
 import useRequestData from "../Hooks/useRequestData";
-import { MainContainer, RenderContainer } from "./Styles/styles";
+import { MainContainerRestaurant, RenderContainer } from "./Styles/styles";
 
 export default function RestaurantPage() {
   useAuthorization();
@@ -27,7 +27,7 @@ export default function RestaurantPage() {
   };
 
   return (
-    <MainContainer>
+    <MainContainerRestaurant>
       <CategoryComponent arrayCategory={categorys} getCategory={getCategory} />
       <RenderContainer marginTop="180px">
         <CardRestaurant
@@ -65,6 +65,6 @@ export default function RestaurantPage() {
             );
           })}
       </RenderContainer>
-    </MainContainer>
+    </MainContainerRestaurant>
   );
 }

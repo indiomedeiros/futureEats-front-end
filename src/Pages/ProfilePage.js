@@ -5,7 +5,6 @@ import useAuthorization from "../Hooks/useAuthetication";
 import OrderCard from "../Components/OrderCard/OrderCard";
 import useRequestData from "../Hooks/useRequestData";
 import {
-  MainContainer,
   UserData,
   AddressContainer,
   AddresTitle,
@@ -15,6 +14,7 @@ import {
   EditProfile,
   RenderContainer,
   H4,
+  MainContainerProfilePage,
 } from "./Styles/styles";
 import edit from "../Assets/Img/edit.png";
 
@@ -37,7 +37,7 @@ export default function ProfilePage() {
   }, [userProfile, userOrderHistory]);
 
   return (
-    <MainContainer>
+    <MainContainerProfilePage>
       <RenderContainer marginTop="100px">
         <H4>Editar Perfil</H4>
         <UserContainer>
@@ -73,6 +73,6 @@ export default function ProfilePage() {
           <p>Você não realizou nenhum pedido</p>
         )}
       </RenderContainer>
-    </MainContainer>
+    </MainContainerProfilePage>
   );
 }

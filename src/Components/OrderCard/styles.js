@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const Orders = styled.div`
   width: 328px;
-  //height: 102px;
   font-weight: bold;
-  margin: 7px 0 0;
+  margin: 7px 0 0 4px;
   padding: 16px;
   border-radius: 8px;
   border: solid 1px grey;

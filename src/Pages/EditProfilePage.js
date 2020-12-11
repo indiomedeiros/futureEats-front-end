@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import InputComponent from "../Components/Inputs/InputComponent";
 import useAuthorization from "../Hooks/useAuthetication";
@@ -26,7 +26,7 @@ export const TextContainer = styled.div`
 export default function EditProfilePage() {
   const history = useHistory();
   const user = JSON.parse(localStorage.getItem("user"));
-  const [initForm, setInitForm] = useState();
+ 
   const [form, onChange] = useForm({
     name: user.name,
     email: user.email,

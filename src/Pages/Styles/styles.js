@@ -5,8 +5,22 @@ export const MainContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
+  margin-bottom: 1400px;
+  width: 100vw;
+`;
+export const MainContainerProfilePage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: 100vh;
+  width: 100vw;
+`;
+export const MainContainerRestaurant = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100vw;
 `;
 
@@ -36,6 +50,7 @@ export const EditAddress = styled.img`
 `;
 
 export const OrderBar = styled.h4`
+  margin-left: 4px;
   width: 360px;
   height: 20px;
   margin-top: 10px;
