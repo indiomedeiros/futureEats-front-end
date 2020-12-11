@@ -9,24 +9,19 @@ import {
   AddressContainer,
   UserData,
   AddresTitle,
- 
   EditAddress,
   PaymentMethodTitle,
   SubTotal,
   DivPayment,
   Bar,
- 
   Title,
-  DivStatusPhone,
   RestaurantName,
   RestaurantAdress,
   Freight,
-
   PaymentMethodInput,
   PaymentMethodLabel,
   ButtonPayCartDisenable,
   ButtonPayCartEnable,
-  Hours,
   DivProductsBuy,
   DivSubTotal,
 } from "./Styles/styles";
@@ -40,19 +35,16 @@ export default function CartPage() {
   const [buyFood, setBuyFood] = useState(
     JSON.parse(localStorage.getItem("buyFood"))
   );
-  let shipping = 0
+  let shipping = 0;
   const [paymentMethod, setPaymentMethod] = useState("");
   const { setDisplay } = useContext(GlobalStateContext);
   const adress = JSON.parse(localStorage.getItem("user"));
-  const date = new Date();
-  
-  
-  
+
   buyFood &&
     buyFood.products &&
     buyFood.products.forEach((food) => {
       //quantidade
-      shipping = buyFood.restaurant.shipping 
+      shipping = buyFood.restaurant.shipping;
       subTotal += food.price * food.count;
     });
 
@@ -110,13 +102,6 @@ export default function CartPage() {
 
   return (
     <RenderContainer>
-      
-      <DivStatusPhone>
-        <Hours>
-          {" "}
-          {date.getHours()} : {date.getMinutes()}
-        </Hours>
-      </DivStatusPhone>
       <Bar>
         <Title>Meu Carrinho</Title>
       </Bar>
@@ -186,9 +171,8 @@ export default function CartPage() {
             type="radio"
           />
           <PaymentMethodLabel for="cartão de crédito">
-            
             Cartão de crédito
-            </PaymentMethodLabel>
+          </PaymentMethodLabel>
 
           {/* botão só aparece se houver opção de pagamento selecionada e produto no carrinho*/}
           {subTotal !== 0 && paymentMethod && (

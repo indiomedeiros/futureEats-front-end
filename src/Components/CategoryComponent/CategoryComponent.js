@@ -5,17 +5,17 @@ const CategoryContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    
     top:110px;
     left: 10px;
     overflow: scroll;
-    width: 95%;
+    width: 90vw;
 `
 export const CategoryItem = styled.a`
 
     list-style: none;
-    margin: 20px 10px;
-    font-size: 16px;
+    margin: 20px 8px;
+    font-size: 18px;
     letter-spacing: 0.36;
     color: black;
     text-decoration: none;

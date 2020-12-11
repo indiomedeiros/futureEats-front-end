@@ -5,9 +5,12 @@ export const MainContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 50px;
   height: 100vh;
   width: 100vw;
-  position: relative;
+ 
+  
+  
 `;
 
 export const TitleBar = styled.h4`
@@ -99,22 +102,25 @@ export const FormContainer = styled.form`
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 85%;
-  position: absolute;
-  top: 70px;
-  left: 15px;
-  margin-top: 0px;
+  margin-top: 150px;
   margin-bottom: 0px;
   border-radius: 2px;
   border: solid 1px grey;
   font-size: 30px;
   padding-left: 20px;
 `;
+export const DivFeedScroll = styled.div `
+  
 
+`
+export const H4 = styled.h4 `
+   text-align: center;
+
+`
 export const RenderContainer = styled.div`
   box-sizing: border-box;
-  margin: 0px;
+  margin-top: 20px;
   padding: 0px;
   width: 100vw;
   height: 100vh;
