@@ -61,7 +61,7 @@ export default function CartPage() {
         }),
         paymentMethod: paymentMethod,
       };
-      console.log("body", body);
+     
       
       //requisição 
       api

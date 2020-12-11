@@ -155,7 +155,7 @@ export default function CardProduto(props) {
       };
       localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
     }
-    console.log("food", newFood);
+    
   };
 
   const RemoveFoodCart = (food) => {
@@ -167,7 +167,7 @@ export default function CardProduto(props) {
     arrayBuyFood.products = newArrayFood;
     if (arrayBuyFood.products.length === 0) {
       localStorage.removeItem("buyFood");
-      console.log("fintro newarrayBuyFod");
+      
     } else {
       localStorage.setItem("buyFood", JSON.stringify(arrayBuyFood));
     }

@@ -6,11 +6,11 @@ import GlobalStateContext from '../../Global/GlobalStateContext';
 export const Container = styled.div`
   display: flex;
   height: 118px;
-  width: 100%;
+  width: 110vw;
   background-color: #56b646;
   align-items: center;
   position: absolute;
-  bottom: 60px;
+  bottom: 45px;
   left: 0px;
   
 `;
@@ -49,7 +49,7 @@ export default function OnGoingOrder(props) {
     const {display }= useContext(GlobalStateContext)
 
   return (<>
-     {display && <Container>
+     {display && display.totalPrice && <Container>
 
         <IconContainer>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -60,7 +60,7 @@ export default function OnGoingOrder(props) {
             <P>Pedido em andamento</P>
             <Name>{display.restaurantName}</Name>
             <Price>SUBTOTAL: R${display.totalPrice.toFixed(2)}</Price>
-            {console.log(display)}
+        
         </InfoContainer>
 
     </Container>}

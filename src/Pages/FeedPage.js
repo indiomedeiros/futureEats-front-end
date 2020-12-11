@@ -57,7 +57,6 @@ export default function FeedPage() {
   return (
     
     <MainContainer>
-      {console.log(filterList)}
       <SearchContainer>
         <SearchIcon fontSize='inherit'/>
         <SearchInput

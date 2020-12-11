@@ -23,7 +23,6 @@ export const GlobalState = (props) => {
         api.defaults.headers.common["auth"] = localStorage.getItem("token")
         api("/active-order")
         .then(response => {
-          console.log("display", response)
             setDisplay(response.data.order)
             
         })
