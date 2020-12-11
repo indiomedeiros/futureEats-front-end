@@ -83,7 +83,7 @@ export default function FeedPage() {
             
           );
         }):<div>
-          <h2>nao encontramos :( </h2>
+        <p>{'Nao encontramos :('} </p>
           </div>
     }
       </RenderContainer>
