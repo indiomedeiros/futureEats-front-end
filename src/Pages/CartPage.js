@@ -88,10 +88,14 @@ export default function CartPage() {
       api
         .post(`/restaurants/${buyFood.restaurant.id}/order`, body)
         .then((response) => {
-          console.log("compra", response.message);
-          localStorage.removeItem("buyFood");
-          setBuyFood(undefined);
-          setDisplay(true);
+
+          console.log("compra", response.message)
+          localStorage.removeItem("buyFood")
+          setBuyFood(undefined)
+          setDisplay(true)
+          alert("Pedido Realizado! Bom apetite!")
+          history.push('/')
+
         })
         .catch((error) => {
           alert("Já existe um pedido em andamento");

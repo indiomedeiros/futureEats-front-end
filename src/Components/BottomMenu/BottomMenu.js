@@ -27,11 +27,6 @@ const IconContainer = styled.div`
     height: 100%;
 `
 
-
-
-
-
-
 export default function BottomMenu() {
     const history = useHistory()
     

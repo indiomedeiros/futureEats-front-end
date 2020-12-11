@@ -44,6 +44,7 @@ export default function SignUpPage() {
         history.push('/address_form')
     
       }).catch(error=>{
+        alert("Dados Inválidos! Verifique seus dados ou contate nosso suporte!")
         console.log(error.message)
       })
     }

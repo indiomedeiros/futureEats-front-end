@@ -52,6 +52,7 @@ export default function LoginPage() {
 
 
     }).catch(error=>{
+      alert("Erro ao fazer login! Verifique seus dados!")
       console.log(error.message)
     })
 

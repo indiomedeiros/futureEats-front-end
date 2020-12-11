@@ -19,17 +19,46 @@ export const ImageContainer = styled.div`
     height: 50%;
     overflow: hidden;
 `
-
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width:90%;
+  min-height: 188px;
+  max-height: max-content;
+  margin: auto;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  border:1px solid #a5a5a5 ;
+`
 export const Image = styled.img`
     width: 100%;
-    height: 100%;
+    height: 120px;
 `
-export const TitleContainer = styled.div`
 
-    display: flex;
+export const TitleContainer = styled.div`
+    display:flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    height: 40px;
+`
+export const Title = styled.p`
+    color: #5CB646;
+    font-size: 16px;
+    margin: 5px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+`
+export const InfoContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    margin-top: -20px;
+`
 
+export const Information = styled(Title)`
+    color: #B8B8B8;
 `
