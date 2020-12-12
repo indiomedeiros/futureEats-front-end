@@ -94,6 +94,7 @@ export const Login_Sign_Container = styled(MainContainer)`
   transform: translate(-50%, -50%);
   z-index: 4;
   background-color: white;
+  height: 100vh;
 `;
 
 export const FormContainer = styled.form`

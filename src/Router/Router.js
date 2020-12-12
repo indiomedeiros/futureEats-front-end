@@ -25,7 +25,6 @@ export default function Router() {
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/sign_up">
               <SignUpPage />
-              <Header />
             </Route>
             <Route exact path="/feed">
               <Header />
