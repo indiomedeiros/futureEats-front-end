@@ -72,5 +72,5 @@ Renderiza as informações do pedido em andamento como Nome do restaurante e Sub
 
 
 ## Link do Surge: 
-<military-change.surge.sh>
+<https://dumont-labe-food7.surge.sh>
 ---
