@@ -89,8 +89,9 @@ export const AddressContainer = styled.div`
 
 export const Login_Sign_Container = styled(MainContainer)`
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 4;
   background-color: white;
 `;
@@ -298,3 +299,11 @@ export const ButtonPayCartEnable = styled.button`
 export const ButtonPayCartDisenable = styled(ButtonPayCartEnable)`
   background-color: gray;
 `;
+
+export const LogoutContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+
+`

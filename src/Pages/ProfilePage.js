@@ -15,8 +15,10 @@ import {
   RenderContainer,
   H4,
   MainContainerProfilePage,
+  LogoutContainer,
 } from "./Styles/styles";
 import edit from "../Assets/Img/edit.png";
+import { Title } from "../Components/CardProduct/style";
 
 export default function ProfilePage() {
   const history = useHistory();
@@ -39,7 +41,13 @@ export default function ProfilePage() {
   return (
     <MainContainerProfilePage>
       <RenderContainer >
+        <LogoutContainer>
         <H4>Editar Perfil</H4>
+        <Title onClick={()=> {localStorage.clear()
+          history.push('/')
+        }}>Logout</Title>
+
+        </LogoutContainer>
         <UserContainer>
           <UserData>{profile.name}</UserData>
           <EditProfile
