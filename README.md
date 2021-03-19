@@ -1,4 +1,6 @@
 # Future Eats
+site de delivery de comida semelhante ao UberEat's
+
 ## Link do Surge: 
 <https://dumont-labe-food7.surge.sh>
 
