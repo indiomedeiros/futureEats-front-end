@@ -5,10 +5,10 @@ site de delivery de comida semelhante ao UberEat's
 <https://dumont-labe-food7.surge.sh>
 
 # Devs: 
-Daltro Machado
-Indio Medeiros
-Hendrik Liu
-Jose Barbosa Junior
+* Daltro Machado
+* Indio Medeiros
+* Hendrik Liu
+* Jose Barbosa Junior
 
 
 # O que funciona:
