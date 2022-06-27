@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/futureEats-front-end/static/css/main.69eda509.chunk.css",
-    "main.js": "/futureEats-front-end/static/js/main.25f791bd.chunk.js",
-    "main.js.map": "/futureEats-front-end/static/js/main.25f791bd.chunk.js.map",
+    "main.js": "/futureEats-front-end/static/js/main.b13a6e65.chunk.js",
+    "main.js.map": "/futureEats-front-end/static/js/main.b13a6e65.chunk.js.map",
     "runtime-main.js": "/futureEats-front-end/static/js/runtime-main.da249008.js",
     "runtime-main.js.map": "/futureEats-front-end/static/js/runtime-main.da249008.js.map",
     "static/js/2.d7eb4a0e.chunk.js": "/futureEats-front-end/static/js/2.d7eb4a0e.chunk.js",
     "static/js/2.d7eb4a0e.chunk.js.map": "/futureEats-front-end/static/js/2.d7eb4a0e.chunk.js.map",
     "index.html": "/futureEats-front-end/index.html",
-    "precache-manifest.473406fbbd609e838d36c030abbe12c3.js": "/futureEats-front-end/precache-manifest.473406fbbd609e838d36c030abbe12c3.js",
+    "precache-manifest.6bb76ff6802354ce493868ac52d3ed54.js": "/futureEats-front-end/precache-manifest.6bb76ff6802354ce493868ac52d3ed54.js",
     "service-worker.js": "/futureEats-front-end/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/futureEats-front-end/static/css/main.69eda509.chunk.css.map",
     "static/js/2.d7eb4a0e.chunk.js.LICENSE.txt": "/futureEats-front-end/static/js/2.d7eb4a0e.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.da249008.js",
     "static/js/2.d7eb4a0e.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.25f791bd.chunk.js"
+    "static/js/main.b13a6e65.chunk.js"
   ]
 }
