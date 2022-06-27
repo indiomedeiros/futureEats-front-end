@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87f3ef90abdd0d38daca979134ede42e",
+    "revision": "8156080ebdc1ba6ace0e144b22fd2a44",
     "url": "/futureEats-front-end/index.html"
   },
   {
-    "revision": "2160194e91ea85ffdd8f",
+    "revision": "88c0cd6aefaabd6c29d8",
     "url": "/futureEats-front-end/static/css/main.69eda509.chunk.css"
   },
   {
-    "revision": "2aeb68d5a5c4942876c2",
-    "url": "/futureEats-front-end/static/js/2.4fe9247b.chunk.js"
+    "revision": "20a389b9e3b06e76662a",
+    "url": "/futureEats-front-end/static/js/2.d7eb4a0e.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/futureEats-front-end/static/js/2.4fe9247b.chunk.js.LICENSE.txt"
+    "url": "/futureEats-front-end/static/js/2.d7eb4a0e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2160194e91ea85ffdd8f",
-    "url": "/futureEats-front-end/static/js/main.c7284aa8.chunk.js"
+    "revision": "88c0cd6aefaabd6c29d8",
+    "url": "/futureEats-front-end/static/js/main.a8b91863.chunk.js"
   },
   {
     "revision": "5691202432e78b11783b",
