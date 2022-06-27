@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/futureEats-front-end/precache-manifest.d1fdd40f84bbbfaa1fef064c30bf1d7a.js"
+  "/futureEats-front-end/precache-manifest.f9b63a8c7999585a0f9d238097f7ee3c.js"
 );
 
 self.addEventListener('message', (event) => {

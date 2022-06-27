@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "84963a2ebf109508cb9b2e0d9e7d41d1",
+    "revision": "87f3ef90abdd0d38daca979134ede42e",
     "url": "/futureEats-front-end/index.html"
   },
   {
-    "revision": "e1fe930a073222d38df3",
+    "revision": "2160194e91ea85ffdd8f",
     "url": "/futureEats-front-end/static/css/main.69eda509.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/futureEats-front-end/static/js/2.4fe9247b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e1fe930a073222d38df3",
-    "url": "/futureEats-front-end/static/js/main.100fa785.chunk.js"
+    "revision": "2160194e91ea85ffdd8f",
+    "url": "/futureEats-front-end/static/js/main.c7284aa8.chunk.js"
   },
   {
     "revision": "5691202432e78b11783b",

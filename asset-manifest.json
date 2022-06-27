@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/futureEats-front-end/static/css/main.69eda509.chunk.css",
-    "main.js": "/futureEats-front-end/static/js/main.100fa785.chunk.js",
-    "main.js.map": "/futureEats-front-end/static/js/main.100fa785.chunk.js.map",
+    "main.js": "/futureEats-front-end/static/js/main.c7284aa8.chunk.js",
+    "main.js.map": "/futureEats-front-end/static/js/main.c7284aa8.chunk.js.map",
     "runtime-main.js": "/futureEats-front-end/static/js/runtime-main.da249008.js",
     "runtime-main.js.map": "/futureEats-front-end/static/js/runtime-main.da249008.js.map",
     "static/js/2.4fe9247b.chunk.js": "/futureEats-front-end/static/js/2.4fe9247b.chunk.js",
     "static/js/2.4fe9247b.chunk.js.map": "/futureEats-front-end/static/js/2.4fe9247b.chunk.js.map",
     "index.html": "/futureEats-front-end/index.html",
-    "precache-manifest.d1fdd40f84bbbfaa1fef064c30bf1d7a.js": "/futureEats-front-end/precache-manifest.d1fdd40f84bbbfaa1fef064c30bf1d7a.js",
+    "precache-manifest.f9b63a8c7999585a0f9d238097f7ee3c.js": "/futureEats-front-end/precache-manifest.f9b63a8c7999585a0f9d238097f7ee3c.js",
     "service-worker.js": "/futureEats-front-end/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/futureEats-front-end/static/css/main.69eda509.chunk.css.map",
     "static/js/2.4fe9247b.chunk.js.LICENSE.txt": "/futureEats-front-end/static/js/2.4fe9247b.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.da249008.js",
     "static/js/2.4fe9247b.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.100fa785.chunk.js"
+    "static/js/main.c7284aa8.chunk.js"
   ]
 }
